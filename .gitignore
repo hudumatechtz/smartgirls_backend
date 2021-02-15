@@ -1,5 +1,10 @@
-# Object file
-*.o
+#Node modules
+node_modules
 
-# Ada Library Information
-*.ali
+#Package-lock.json
+*-lock.json
+
+# Environment variable
+.env
+
+.idea
