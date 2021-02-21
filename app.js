@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const path = require("path");
 require("dotenv").config();
-const MONGO_URI = process.env.MONGO_URI;
+const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/bongo_camp";
 const PORT = process.env.PORT || 3000;
 const articleRoute = require("./routes/article.route");
 
@@ -28,6 +28,8 @@ app.use((err, req, res, next) => {
   console.log(err);
   next();
 });
+
+
 mongoose.connect(
   MONGO_URI,
   {
