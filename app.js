@@ -19,7 +19,8 @@ app.use("/images", express.static(path.join(__dirname, "images")));
 app.use("/article", articleRoute);
 
 app.use("/", (req, res, next) => {
-  res.status(200).json({ message: "Welcome to Smartgirls in ICT" });
+  // res.status(200).json({ message: "Welcome to Smartgirls in ICT" });
+  res.render("index");
   next;
 });
 
