@@ -41,24 +41,34 @@
 <!-- Slide End Here -->
 
 
-<div class="container">
-    <h1>Welcome to smartgirls in ICT</h1>
+<div class="ui container" style="margin:10px 0;">
+    <div class="ui segment">
+        <div class="ui two column very relaxed grid">
+            <div class="image column">
+                <img src="images/043.jpg" class="w-100" alt="...">
+            </div>
+            <div class="column">
+                <p>We are a consortium made up of the University of Dar as Salaam</p>
+                <p></p>
+            </div>
+        </div>
+    </div>
 </div>
 
 
 <!-- Recent Articles Starts HERE -->
-<div class="mb-10 ui container">
+<div class="ui container" style="margin:20px 0;">
 
     <div class="">
         <div class="mx-auto ui link cards" style="width:84%;">
-            <% for(i = 43; i <= 47; i++) { 
+            <% for(i = 43; i <= 45; i++) { 
                 const src = "images/0" + i + ".jpg" %>
             <%- include ("./article-card", {src: src}) %>
             <% } %>
         </div>
     </div>
 </div>
-    <!-- Recent Articles Ends HERE -->
+<!-- Recent Articles Ends HERE -->
 
 
 <%- include ("includes/footer") -%>
