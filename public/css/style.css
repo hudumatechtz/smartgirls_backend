@@ -18,13 +18,14 @@ html, body {
     font-size: 45px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-top: 25px;
+    margin-top: 35px;
     color: #F05056;
 }
 .carousel-caption p{
     width: 75%;
     margin: auto;
-    font-size: 18px;
+    font-size: 25px;
+    font-weight: 550;
     line-height: 1.9;
 }
 .navbar-light .navbar-brand{
@@ -36,5 +37,5 @@ html, body {
 }
 .navbar-light .navbar-nav .nav-link{ 
     color: #F05056;
-    font-weight: bold;
+    font-weight: 800;
 }
