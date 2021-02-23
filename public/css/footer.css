@@ -1,0 +1,76 @@
+/*=================================
+ FOOTER
+===================================*/
+.upper-footer {
+  background: #f5f5f5;
+}
+.contact-details {
+  margin: 30px 0 0 0;
+  padding-left: 0;
+}
+.contact-details li{
+  margin-bottom: 10px;
+}
+.contact-details li > div {
+  margin-right: 10px;
+}
+.contact-details li:last-child {
+  margin-bottom: 0;
+}
+.contact-details li span {
+  padding-right: 5px;
+}
+.contact-details li .material-icons {
+  font-size: 17px;
+  vertical-align: middle;
+  margin-bottom: 2px;
+}
+.contact-details li a {
+  color: #5867dd;
+}
+.contact-details li a:hover {
+  color:#34bfa3;
+}
+ul, li {
+  list-style: none;
+}
+a:focus,a:hover {
+  text-decoration:none;
+  -webkit-transition:.3s ease;
+  -o-transition:.3s ease;
+  transition:.3s ease
+}
+a:focus {
+  outline:0
+}
+.text-muted a {
+  color: #1E1F26;
+}
+.text-muted a:hover {
+  color: #b80f0a;
+  cursor: pointer;
+}
+h3 {
+  font-family:Rubik,sans-serif;
+  margin-bottom: 10px;
+  font-weight:500;
+  padding:0;
+  color:#363940
+}
+.lower-footer {
+  background: #192027;
+  text-align: center;
+  padding: 20px 0;
+}
+.lower-footer p {
+  margin: 0;
+  line-height: 26px;
+  font-size: 15px;
+  color: #999;
+}
+.lower-footer p a {
+  color: #5867dd;
+}
+.lower-footer p a:hover {
+  color: #34bfa3;
+}
