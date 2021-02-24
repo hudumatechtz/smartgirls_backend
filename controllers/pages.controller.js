@@ -1,5 +1,5 @@
 exports.getIndex = (req, res, next) => {
-    res.render('index');
+    res.render('home');
 }
 exports.getAbout = (req, res, next) => {
     res.render('about');
