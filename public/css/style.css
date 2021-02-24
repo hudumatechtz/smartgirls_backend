@@ -1,43 +1,36 @@
+:root {
+    --main-color: #a61646;
+    --black-color: #000000;
+    --white-color: #ffffff;
+}
 html, body {
-  height: 100%;
-  margin: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-/*======== SLIDER CSS =======*/
-.carousel-item{
-     height: 75vh;
-     min-height: 300px;
-     background: no-repeat center center scroll;
-     background-size: cover;
-     -webkit-background-size: cover; 
+a {
+    text-decoration: none;
 }
-.carousel-caption{
-    bottom: 270px;
+.main-background {
+    background: var(--main-color);
 }
-.carousel-caption h1{
-    font-size: 45px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 35px;
-    color: #FF5056;
+.white-background {
+    background: var(--white-color);
 }
-.carousel-caption p{
-    width: 75%;
-    margin: auto;
-    font-size: 25px;
-    font-weight: 550;
-    line-height: 1.9;
+.main-color {
+    color: var(--main-color);
 }
-.navbar-light .navbar-brand{
-    color: #FF5056;
-    font-size: 25px;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 2px;
+.black-color {
+    color: var(--black-color);
 }
-.navbar-light .navbar-nav .nav-link{ 
-    color: #FF5056;
-    font-weight: 800;
+.white-color {
+    color: var(--white-color);
+}
+.box-shadow {
+    -webkit-box-shadow: 0 4px 2px -2px rgb(0 0 0 / 6%), 0 4px 10px rgb(0 0 0 / 6%);
+    box-shadow: 0 4px 2px -2px rgb(0 0 0 / 6%), 0 4px 10px rgb(0 0 0 / 6%);
 }
 
 /* SPONSOR */
