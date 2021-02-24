@@ -11,21 +11,36 @@ nav {
     padding-top: 15px;
     padding-bottom: 15px;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
 }
 .brand-name a {
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 6550;
+    letter-spacing: 3px;
 }
 .brand-name a:hover {
     transition: 0.5s;
     color: #f3f3f3;
 }
+
+.header-links a:after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: #fafafa;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
 .header-links a:hover {
     transition: 0.5s;
-    color: var(--black-color);
-    background: var(--white-color);
+    color: var(--white-color);
 }
+.header-links a:hover:after {
+  color: var(--black-color);
+  width: 100%;
+}
+
 .carousel-item{
     height: 75vh;
     min-height: 300px;
@@ -49,4 +64,18 @@ nav {
    font-size: 25px;
    font-weight: 550;
    line-height: 1.9;
+}
+
+/* SPONSORS */
+.sponsors h2 {
+    color: #000;
+    font-size: 50px;
+    line-height: 95px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+}
+.sponsor-img{
+    max-width: 80%; 
+    height: auto" 
 }

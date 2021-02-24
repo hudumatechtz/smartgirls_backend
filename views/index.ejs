@@ -1,6 +1,6 @@
 <%- include ("includes/header") -%>
 <!-- Slider starts here -->
-<div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel" style="top:0px;">
+<div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel" >
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
@@ -41,13 +41,12 @@
 <!-- Slide End Here -->
 
 <!-- Introduction Start HERE -->
-<div class="ui container" style="margin:10px 0;">
-    <div class="ui segment">
-        <div class="ui two column very relaxed grid">
-            <div class="image column">
+<div class="container box-shadow" >
+    <div class="row" style="margin:10px 0;">
+            <div class="col-lg-6 col-md-auto">
                 <img src="images/043.jpg" class="w-100" alt="...">
             </div>
-            <div class="column text-justify">
+            <div class="col-lg-6 col-md-auto text-justify">
                 <h1 class="text-center">Smart Girls in ICT</h1>
                 <p>
                     We are a consortium made up of the University of Dar as Salaam ICT Incubator(UDICTI), Youth for
@@ -61,25 +60,25 @@
                     studies and careers in the growing field of Information and Communication Technologies(ICTs).
                 </p>
             </div>
-        </div>
     </div>
 </div>
 <!-- Introduction End HERE -->
 
 
 <!-- Recent Articles Starts HERE -->
-<div class="ui container" style="margin:20px 0;">
-
-    <div class="">
-        <div class="mx-auto ui link cards" style="width:84%;">
-            <% for(i = 43; i <= 45; i++) { 
+<div class="container">
+        <div class="row">
+            <% for(i = 44; i <= 46; i++) { 
                 const src = "images/0" + i + ".jpg" %>
             <%- include ("./article-card", {src: src}) %>
             <% } %>
         </div>
-    </div>
 </div>
 <!-- Recent Articles Ends HERE -->
+
+<!-- Sponsor Start HERE -->
+<%- include ("./sponsors") %>
+<!-- Sponsor End HERE -->
 
 
 <%- include ("includes/footer") -%>
