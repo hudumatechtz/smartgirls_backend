@@ -1,0 +1,52 @@
+nav {
+    height: 50px;
+}
+.navbar {
+    padding: 0;
+}
+.header-links {
+    height: 50px;
+}
+.header-links a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.brand-name a {
+    font-size: 20px;
+    font-weight: 600;
+}
+.brand-name a:hover {
+    transition: 0.5s;
+    color: #f3f3f3;
+}
+.header-links a:hover {
+    transition: 0.5s;
+    color: var(--black-color);
+    background: var(--white-color);
+}
+.carousel-item{
+    height: 75vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    background-size: cover;
+    -webkit-background-size: cover; 
+}
+.carousel-caption{
+   bottom: 270px;
+}
+.carousel-caption h1{
+   font-size: 45px;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   margin-top: 35px;
+   color: #FF5056;
+}
+.carousel-caption p{
+   width: 75%;
+   margin: auto;
+   font-size: 25px;
+   font-weight: 550;
+   line-height: 1.9;
+}
