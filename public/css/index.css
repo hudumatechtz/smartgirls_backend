@@ -67,8 +67,15 @@ nav {
 }
 
 /* SPONSORS */
+.sponsors{
+    background-image: url(../images/01.jpg);
+    color: #fff;
+    margin-top: 2em;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
 .sponsors h2 {
-    color: #000;
+    color: #fff;
     font-size: 50px;
     line-height: 95px;
     font-weight: 400;
@@ -78,4 +85,9 @@ nav {
 .sponsor-img{
     max-width: 80%; 
     height: auto" 
+}
+
+/* Recent Articles */
+.recent-articles, .intro{
+    margin-top: 3em;
 }
