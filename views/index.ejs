@@ -68,13 +68,17 @@
 <!-- Recent Articles Starts HERE -->
 <div class="container">
         <div class="row">
-            <% for(i = 43; i <= 45; i++) { 
+            <% for(i = 44; i <= 46; i++) { 
                 const src = "images/0" + i + ".jpg" %>
             <%- include ("./article-card", {src: src}) %>
             <% } %>
         </div>
 </div>
 <!-- Recent Articles Ends HERE -->
+
+<!-- Sponsor Start HERE -->
+<%- include ("./sponsors") %>
+<!-- Sponsor End HERE -->
 
 
 <%- include ("includes/footer") -%>

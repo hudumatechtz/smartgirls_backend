@@ -4,9 +4,6 @@ html, body {
 }
 
 /*======== SLIDER CSS =======*/
-/* .carousel{
-    top: 0;
-} */
 .carousel-item{
      height: 75vh;
      min-height: 300px;
@@ -41,4 +38,18 @@ html, body {
 .navbar-light .navbar-nav .nav-link{ 
     color: #FF5056;
     font-weight: 800;
+}
+
+/* SPONSOR */
+.sponsors h2 {
+    color: #000;
+    font-size: 50px;
+    line-height: 95px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+}
+.sponsor-img{
+    max-width: 80%; 
+    height: auto" 
 }
