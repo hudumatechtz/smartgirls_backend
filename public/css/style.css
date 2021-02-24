@@ -4,6 +4,9 @@ html, body {
 }
 
 /*======== SLIDER CSS =======*/
+/* .carousel{
+    top: 0;
+} */
 .carousel-item{
      height: 75vh;
      min-height: 300px;
@@ -19,7 +22,7 @@ html, body {
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-top: 35px;
-    color: #F05056;
+    color: #FF5056;
 }
 .carousel-caption p{
     width: 75%;
@@ -29,13 +32,13 @@ html, body {
     line-height: 1.9;
 }
 .navbar-light .navbar-brand{
-    color: #F05056;
+    color: #FF5056;
     font-size: 25px;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 2px;
 }
 .navbar-light .navbar-nav .nav-link{ 
-    color: #F05056;
+    color: #FF5056;
     font-weight: 800;
 }
