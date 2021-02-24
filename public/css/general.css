@@ -14,7 +14,7 @@ body {
   }
   
   a {
-    color: #ffc451;
+    color: #a61646;
   }
   
   a:hover {
@@ -45,14 +45,14 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 4px;
-    background: #ffc451;
+    background: #a61646;
     color: #151515;
     transition: all 0.4s;
   }
   
   .back-to-top i:hover {
     background: #151515;
-    color: #ffc451;
+    color: #a61646;
   }
   
   /*--------------------------------------------------------------
@@ -74,7 +74,7 @@ body {
     position: fixed;
     top: calc(50% - 0px);
     left: calc(50% - 30px);
-    border: 6px solid #ffc451;
+    border: 6px solid #a61646;
     border-top-color: #151515;
     border-bottom-color: #151515;
     border-radius: 50%;
@@ -139,7 +139,7 @@ body {
   }
   
   #header .logo a span {
-    color: #ffc451;
+    color: #a61646;
   }
   
   #header .logo img {
@@ -177,7 +177,7 @@ body {
   }
   
   .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
-    color: #ffc451;
+    color: #a61646;
   }
   
   .nav-menu .drop-down ul {
@@ -215,7 +215,7 @@ body {
   
   .nav-menu .drop-down ul a:hover, .nav-menu .drop-down ul .active > a, .nav-menu .drop-down ul li:hover > a {
     color: #151515;
-    background: #ffc451;
+    background: #a61646;
   }
   
   .nav-menu .drop-down > a:after {
@@ -267,7 +267,7 @@ body {
     transition: 0.3s;
     font-size: 14px;
     display: inline-block;
-    border: 2px solid #ffc451;
+    border: 2px solid #a61646;
   }
   
   .get-started-btn:hover {
@@ -336,7 +336,7 @@ body {
   .mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
     color: #151515;
     text-decoration: none;
-    background: #ffc451;
+    background: #a61646;
   }
   
   .mobile-nav .drop-down > a:after {
@@ -427,7 +427,7 @@ body {
   }
   
   #hero h1 span {
-    color: #ffc451;
+    color: #a61646;
   }
   
   #hero h2 {
@@ -447,7 +447,7 @@ body {
   #hero .icon-box i {
     font-size: 32px;
     line-height: 1;
-    color: #ffc451;
+    color: #a61646;
   }
   
   #hero .icon-box h3 {
@@ -465,11 +465,11 @@ body {
   }
   
   #hero .icon-box h3 a:hover {
-    color: #ffc451;
+    color: #a61646;
   }
   
   #hero .icon-box:hover {
-    border-color: #ffc451;
+    border-color: #a61646;
   }
   
   @media (min-width: 1024px) {
@@ -559,7 +559,7 @@ body {
     font-size: 20px;
     left: 0;
     top: -3px;
-    color: #ffc451;
+    color: #a61646;
   }
   
   .about .content p:last-child {
@@ -607,7 +607,7 @@ body {
   }
   
   .clients .owl-dot.active {
-    background-color: #ffc451 !important;
+    background-color: #a61646 !important;
   }
   
   /*--------------------------------------------------------------
@@ -630,7 +630,7 @@ body {
   .features .icon-box i {
     font-size: 48px;
     float: left;
-    color: #ffc451;
+    color: #a61646;
   }
   
   .features .icon-box p {
@@ -661,7 +661,7 @@ body {
     margin: 0 auto;
     width: 64px;
     height: 64px;
-    background: #ffc451;
+    background: #a61646;
     border-radius: 4px;
     display: flex;
     align-items: center;
@@ -688,7 +688,7 @@ body {
   }
   
   .services .icon-box h4 a:hover {
-    color: #ffc451;
+    color: #a61646;
   }
   
   .services .icon-box p {
@@ -737,8 +737,8 @@ body {
   }
   
   .cta .cta-btn:hover {
-    background: #ffc451;
-    border-color: #ffc451;
+    background: #a61646;
+    border-color: #a61646;
     color: #151515;
   }
   
@@ -772,7 +772,7 @@ body {
   
   .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
     color: #151515;
-    background: #ffc451;
+    background: #a61646;
   }
   
   .portfolio #portfolio-flters li:last-child {
@@ -849,7 +849,7 @@ body {
   }
   
   .portfolio .portfolio-wrap .portfolio-links a:hover {
-    color: #ffc451;
+    color: #a61646;
   }
   
   .portfolio .portfolio-wrap:hover::before {
@@ -889,7 +889,7 @@ body {
   .counts .content .count-box i {
     display: block;
     font-size: 36px;
-    color: #ffc451;
+    color: #a61646;
     float: left;
   }
   
@@ -1034,7 +1034,7 @@ body {
   }
   
   .testimonials .owl-dot.active {
-    background-color: #ffc451 !important;
+    background-color: #a61646 !important;
   }
   
   @media (min-width: 1024px) {
@@ -1091,12 +1091,12 @@ body {
     background: rgba(255, 255, 255, 0.8);
     display: inline-block;
     transition: ease-in-out 0.3s;
-    color: #ffc451;
+    color: #a61646;
   }
   
   .team .member .social a:hover {
     color: #fff;
-    background: #ffc451;
+    background: #a61646;
   }
   
   .team .member .social i {
@@ -1143,7 +1143,7 @@ body {
   
   .contact .info i {
     font-size: 20px;
-    background: #ffc451;
+    background: #a61646;
     color: #151515;
     float: left;
     width: 44px;
@@ -1241,7 +1241,7 @@ body {
   }
   
   .contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
-    border-color: #ffc451;
+    border-color: #a61646;
   }
   
   .contact .php-email-form input {
@@ -1253,7 +1253,7 @@ body {
   }
   
   .contact .php-email-form button[type="submit"] {
-    background: #ffc451;
+    background: #a61646;
     border: 0;
     padding: 10px 24px;
     color: #151515;
@@ -1363,7 +1363,7 @@ body {
   }
   
   .portfolio-details .portfolio-details-carousel .owl-dot.active {
-    background-color: #ffc451 !important;
+    background-color: #a61646 !important;
   }
   
   .portfolio-details .portfolio-info {
@@ -1449,7 +1449,7 @@ body {
   }
   
   #footer .footer-top .footer-info h3 span {
-    color: #ffc451;
+    color: #a61646;
   }
   
   #footer .footer-top .footer-info p {
@@ -1476,7 +1476,7 @@ body {
   }
   
   #footer .footer-top .social-links a:hover {
-    background: #ffc451;
+    background: #a61646;
     color: #151515;
     text-decoration: none;
   }
@@ -1501,7 +1501,7 @@ body {
   
   #footer .footer-top .footer-links ul i {
     padding-right: 2px;
-    color: #ffc451;
+    color: #a61646;
     font-size: 18px;
     line-height: 1;
   }
@@ -1524,7 +1524,7 @@ body {
   }
   
   #footer .footer-top .footer-links ul a:hover {
-    color: #ffc451;
+    color: #a61646;
   }
   
   #footer .footer-top .footer-newsletter form {
@@ -1550,7 +1550,7 @@ body {
     background: none;
     font-size: 16px;
     padding: 0 20px;
-    background: #ffc451;
+    background: #a61646;
     color: #151515;
     transition: 0.3s;
     border-radius: 0 4px 4px 0;
