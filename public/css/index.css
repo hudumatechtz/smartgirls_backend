@@ -1,48 +1,10 @@
-.drop-down-links a:hover {
-    color: ;
+:root {
+    --main-color: #6500c5;
+    --black-color: #000000;
+    --white-color: #ffffff;
 }
-
-nav {
-    height: 50px;
-}
-.navbar {
-    padding: 0;
-}
-.header-links {
-    height: 50px;
-}
-.header-links a {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    font-size: 16px;
-    font-weight: 600;
-}
-.brand-name a {
-    font-size: 20px;
-    font-weight: 6550;
-    letter-spacing: 3px;
-}
-.brand-name a:hover {
-    transition: 0.5s;
-    color: #f3f3f3;
-}
-
-.header-links a:after {
-  content: "";
-  width: 0;
-  height: 2px;
-  background: #fafafa;
-  display: block;
-  margin: auto;
-  transition: 0.5s;
-}
-.header-links a:hover {
-    transition: 0.5s;
-    color: var(--white-color);
-}
-.header-links a:hover:after {
-  color: var(--black-color);
-  width: 100%;
+.nav-menu .drop-down ul li:hover {
+    color: var(--white-color) !important;
 }
 
 .carousel-item{
