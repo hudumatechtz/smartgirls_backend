@@ -1,7 +1,8 @@
 :root {
     --main-color: #6500c5;
-    --black-color: #000000;
+    --black-color: ##4950;
     --white-color: #ffffff;
+    --grey-color: #e9ecef;
 }
 html, body {
     height: 100%;
@@ -33,4 +34,6 @@ a {
     -webkit-box-shadow: 0 4px 2px -2px rgb(0 0 0 / 6%), 0 4px 10px rgb(0 0 0 / 6%);
     box-shadow: 0 4px 2px -2px rgb(0 0 0 / 6%), 0 4px 10px rgb(0 0 0 / 6%);
 }
-
+table {
+    width: 100%;
+}
