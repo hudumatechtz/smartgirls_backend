@@ -1,8 +1,4 @@
-:root {
-    --main-color: #6500c5;
-    --black-color: #000000;
-    --white-color: #ffffff;
-}
+@import "./style.css";
 body{
     font-size: 16px;
 }
