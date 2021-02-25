@@ -63,6 +63,7 @@ section #cover {
 }
 h1{
     font-size: 80px;
+    letter-spacing: 3px;
 }
 span {
     color: #f14a60;
@@ -77,6 +78,7 @@ span {
 }
 #contents p{
     color: var(--white-color);
+    letter-spacing: 2px;
 }
 
 @media only screen and (max-width:768px) {
