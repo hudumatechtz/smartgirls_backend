@@ -1,5 +1,6 @@
-const Article = require('../models/article.model');
+const Article = require("../models/article.model");
 exports.postArticle = async (req, res, next) => {
+  const { title, file } = req.body;
   try {
   } catch (error) {
     next(error);
