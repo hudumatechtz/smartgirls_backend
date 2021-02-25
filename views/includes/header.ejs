@@ -28,6 +28,13 @@
   <link href="./font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" >
   <link href="./css/general.css" rel="stylesheet">
   <link href="./css/style.css" rel="stylesheet">
+  <style>
+    @media screen and (max-width: 991px) {
+      .icon-down {
+        display: none;
+      }
+    } 
+  </style>
 </head>
 <body>
   <header id="header" class="fixed-top ">
@@ -43,18 +50,17 @@
           <li><a href="#">The Workforce</a></li>
           <li><a href="#">Training Resources</a></li>
           <li><a href="#portfolio">Gallery</a></li>
-          <li class="drop-down drop-down-links"><a href="#">Activities <i class="fa fa-caret-down"></i></a>
+          <li class="drop-down drop-down-links"><a href="#">Activities<span></span></a>
             <ul>
-              <li><a href="/activities">2020</a></li>
-                            <li><a href="#">2021</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#clients">Partners</a></li>
+              <li><a href="/activities">Year 2020</a></li>
+              <li><a href="/activities">Year 2021</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Partners</a></li>
+        </ul>
+      </nav><!-- End Nav -->
 
-                </ul>
-            </nav><!-- .nav-menu -->
+      <a href="/account/login" class="get-started-btn scrollto">LOGIN</a>
 
-        <a href="/account/login" class="get-started-btn scrollto">LOGIN</a>
-
-        </div>
-    </header><!-- End Header -->
+    </div>
+  </header><!-- End Header -->
