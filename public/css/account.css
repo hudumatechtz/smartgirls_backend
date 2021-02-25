@@ -37,14 +37,14 @@ button:hover, button:focus {
 section #cover {
     flex: 2;
     background-color: black;
-    background-image: url("../images/pic.jpg");
+    background-image: url("../images/8.jpg");
     filter: brightness(40%);
     opacity: 0.9;
     background-position: center;
     /* opacity: 0.4; */
     /* font-size: 30px; */
 }
-h3{
+h1{
     font-size: 40px;
 }
 #contents{
