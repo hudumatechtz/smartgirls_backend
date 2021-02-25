@@ -1,12 +1,11 @@
-:root {
-    --main-color: #6500c5;
-    --black-color: #000000;
-    --white-color: #ffffff;
-}
+@import "./style.css";
 .nav-menu .drop-down ul li:hover {
     color: var(--white-color) !important;
 }
-
+a {
+    text-decoration: none !important;
+    color: var(--white-color);
+}
 .carousel-item{
     height: 75vh;
     min-height: 300px;
