@@ -1,3 +1,8 @@
+:root {
+    --main-color: #6500c5;
+    --black-color: #000000;
+    --white-color: #ffffff;
+}
 body{
     font-size: 16px;
 }
@@ -15,18 +20,26 @@ input[type=text], input[type=number], input[type=password], button{
     width: 100%;
     margin: 8px 0;
     height: 40px;
-    padding: 10px;
+    padding: 30px 10px;
     /* border: 1px solid black; */
     outline: none;
 }
 button{
     margin-top: 20px;
+    height: 50px;
+    background: var(--main-color) !important;
+    color: var(--white-color) !important;
+}
+button:hover, button:focus {
+    color: var(--white-color);
+    box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.1);
 }
 section #cover {
-    /* background-image: ; */
     flex: 2;
     background-color: black;
     background-image: url("../images/pic.jpg");
+    filter: brightness(40%);
+    opacity: 0.9;
     background-position: center;
     /* opacity: 0.4; */
     /* font-size: 30px; */
@@ -36,7 +49,8 @@ h3{
 }
 #contents{
     font-size: 30px;
-    color: red;
+    font-weight: 700;
+    color: var(--main-color);
     text-align: center;
     position: absolute;
     top: 20%;
