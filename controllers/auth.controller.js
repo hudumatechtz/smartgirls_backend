@@ -6,16 +6,24 @@ exports.getLogin = async (req, res, next) => {
 
 exports.postLogin = async (req, res, next) => {
   const { username, password } = req.body;
+  // console.log(req.body);
   try {
     const user = await User.findOne({ username: username });
-    if (!username) {
-      return res.redirect("/account/login");
+    const error = new Error("Username or password is incorrect");
+    error.statusCode = 401;
+    if (!user) {
+      throw error;
+      // return res.redirect("/account/login");
     }
     const doMatch = await bcyrpt.compare(password, user.password);
     console.log(doMatch);
+    if (!doMatch) {
+      throw error;
+    }
     res.json({ match: doMatch });
-
-  } catch (error) {}
+  } catch (error) {
+    next(error);
+  }
 };
 
 exports.postRegister = async (req, res, next) => {
