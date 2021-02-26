@@ -129,6 +129,11 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 20px !important;
   }
 }
+@media (max-width: 320px) {
+  #header .logo {
+    font-size: 20px !important;
+  }
+}
 #header .logo a {
   color: #fff;
 }
@@ -285,7 +290,11 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   border: 2px solid var(--main-color);
 }
-
+@media (max-width: 320px) {
+  .get-started-btn {
+    padding: 5px 20px 5px 20px !important;
+  }
+}
 .get-started-btn:hover {
   background: var(--white-color);
   color: var(--black-color);

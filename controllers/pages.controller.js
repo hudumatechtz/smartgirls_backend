@@ -7,3 +7,6 @@ exports.getAbout = (req, res, next) => {
 exports.getActivities = (req, res, next) => {
     res.render('activities');
 }
+exports.getWorkforce = (req, res, next) => {
+    res.render('workforce');
+}
