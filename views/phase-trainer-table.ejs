@@ -1,38 +1,52 @@
-<h5>Phase <%= phase %>  Trainers</h5>
+<% 
+var phaseTrainer = [
+    {
+        school: "Alpha Sec. School",
+        trainer: "Beleko & Time"
+    },
+    {
+        school: "Salma Kikwete Sec. School",
+        trainer: "Rajab & Alfeo"
+    },
+    {
+        school: "Kawe Ukwamani Sec. School",
+        trainer: "marab & Joseph"
+    },
+    {
+        school: "Feza Girls Sec. School",
+        trainer: "Hasna & Nguse"
+    },
+    {
+        school: "Baobab Girls Sec. School",
+        trainer: "Esther"
+    }
+];
+%>
+<h5>Phase <%= phase %> Trainers</h5>
 <p>Technical Training Facilitators</p>
 <table class="table table-striped table-responsive-md mt-10">
     <thead>
         <tr>
-          <th scope="col" style="width: 20px;">Sn</th>
-          <th scope="col">School name</th>
-          <th scope="col">Facilitators</th>
+            <th scope="col" style="width: 20px">Sn</th>
+            <th scope="col">School name</th>
+            <th scope="col">Facilitators</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td scope="row">1</td>
-            <td>Alpha Sec. School</td>
-            <td>Beleko & Tlem</td>
-        </tr>
-        <tr>
-            <td scope="row">2</td>
-            <td>Salma kikwete Sec. School</td>
-            <td>Rajab & Alfeo</td>
-        </tr>
-        <tr>
-            <td scope="row">3</td>
-            <td>Kawe Ukwamani Sec. School</td>
-            <td>Marab & Joseph</td>
-        </tr>
-        <tr>
-            <td scope="row">4</td>
-            <td>Feza Girls Sec. School</td>
-            <td>Hasna & Nguse</td>
-        </tr>
-        <tr>
-            <td scope="row">5</td>
-            <td>Baobab Girls Sec. School</td>
-            <td>Esther</td>
-        </tr>
+        <% if (phaseTrainer.length != 0) { %> 
+            <% for (var i = 0; i < phaseTrainer.length; i++) { %>
+                <tr>
+                    <td scope="row"><%= i + 1 %> </td>
+                    <td><%= phaseTrainer[i].school %> </td>
+                    <td><%= phaseTrainer[i].trainer %> </td>
+                </tr>
+            <% } %> 
+        <% } %>
+        <% if (phaseTrainer.length == 0) { %> 
+            <tr>
+                <td class="text-danger" style="text-align: center;" colspan="3">No Trainner assigned</td>
+            </tr>
+        <% } %>
     </tbody>
 </table>
+ 

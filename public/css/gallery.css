@@ -15,7 +15,7 @@ img:hover {
 .gallery-image {
     position: relative;
     width: 100%;
-    padding-top: 100%;
+    padding-top: 70%;
 }
 .gallery-image img {
     position: absolute;
@@ -37,25 +37,25 @@ img:hover {
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
     .gallery-image-wrapper {
-        width: calc(33.333% - var(--product-gap));
+        width: calc(50% - var(--product-gap));
     }
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
     .gallery-image-wrapper {
-        width: calc(25% - var(--product-gap));
+        width: calc(33.333% - var(--product-gap));
     }
 }
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
     .gallery-image-wrapper {
-      width: calc(25% - var(--product-gap));
+      width: calc(33.333% - var(--product-gap));
     }
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
     .gallery-image-wrapper {
-      width: calc(25% - var(--product-gap));
+      width: calc(33.333% - var(--product-gap));
     }
 } 
 /* The Modal (background) */
