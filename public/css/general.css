@@ -296,8 +296,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 .get-started-btn:hover {
-  background: var(--white-color);
-  color: var(--black-color);
+  background: var(--other-color);
+  color: var(--white-color) !important;
+  border: 2px solid var(--other-color);
 }
 
 @media (max-width: 768px) {
@@ -1577,13 +1578,13 @@ section {
   font-size: 16px;
   padding: 0 20px;
   background: var(--main-color);
-  color: #151515;
+  color: var(--white-color);
   transition: 0.3s;
   border-radius: 0 4px 4px 0;
 }
 
 #footer .footer-top .footer-newsletter form input[type="submit"]:hover {
-  background: #ffcd6b;
+  background: var(--other-color);
 }
 
 #footer .copyright {
