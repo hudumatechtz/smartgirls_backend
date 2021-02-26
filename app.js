@@ -45,13 +45,22 @@ const fileStorage = multer.diskStorage({
 //MIDDLEWARES
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// app.set("views", "views");
+app.set("views", "views");
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/images", express.static(path.join(__dirname, "images")));
 app.use(
   multer({ fileFilter: fileFilter, storage: fileStorage }).single("image")
 );
+// app.use((req, res, next) => {
+//   res.setHeader("Access-Control-Allow-Origin", "*");
+//   res.setHeader("Access-Control-Allow-Methods", "*");
+//   res.setHeader(
+//     "Access-Control-Allow-Headers",
+//     "Content-Type, X-Requested-With"
+//   ); // res.setHeader('Access-Control-Allow-Credentials', true)
+//   next();
+// });
 app.use(
   session({
     secret: "callback wizard",
@@ -71,6 +80,11 @@ app.use("/", (req, res, next) => {
 });
 
 app.use((err, req, res, next) => {
+  const status = err.statusCode || 500;
+  const message = err._message ? err._message : err.message;
+  if (err != null) {
+    res.status(status).json({ message: message });
+  }
   console.log(err);
   next();
 });
