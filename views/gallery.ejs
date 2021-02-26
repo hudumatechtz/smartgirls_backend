@@ -7,13 +7,13 @@
                 imgArrays.push(src);
             %>
         <% } %> 
-        <% for (var k = 0; k <= imgArrays.length; k++) { %> 
+        <% imgArrays.forEach(function(img){ %> 
             <div class="gallery-image-wrapper">
                 <div class="gallery-image">
-                    <img class="myImg" src="<%= imgArrays[k] %>">
+                    <img class="myImg" src="<%= img %>">
                 </div>
             </div>
-        <% } %>  
+        <% }); %>  
         <div id="pictureModal" class="modal">
             <span class="close">&times;</span>
             <img class="modal-content" id="img">
