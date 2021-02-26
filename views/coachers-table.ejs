@@ -1,3 +1,28 @@
+<% 
+let coachers = [
+    {
+        name: "Fatuma Simba",
+    },
+    {
+        name: "Josephine Stephen"
+    },
+    {
+        name: "khadija Mkocha",
+    },
+    {
+        name: "Joseph Cosmas"
+    },
+    {
+        name: "Hellen Maziku"
+    },
+    {
+        name: "Mahadia Tunga"
+    },
+    {
+        name: "Somoe Mkwachu"
+    }
+];
+%> 
 <h5>Coachers</h5>
 <table class="table mt-10">
     <thead>
@@ -7,37 +32,18 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td scope="row">1</td>
-            <td>Fatuma simba</td>
-        </tr>
-        <tr>
-            <td scope="row">2</td>
-            <td>Josephine stephen</td>
-        </tr>
-        <tr>
-            <td scope="row">3</td>
-            <td>Khadija mkocha</td>
-        </tr>
-        <tr>
-            <td scope="row">4</td>
-            <td>Joseph Cosmas</td>
-        </tr>
-        <tr>
-            <td scope="row">5</td>
-            <td>Feza Girls Sec School</td>
-        </tr>
-        <tr>
-            <td scope="row">6</td>
-            <td>Hellen maziku</td>
-        </tr>
-        <tr>
-            <td scope="row">7</td>
-            <td>Mahadia Tunga</td>
-        </tr>
-        <tr>
-            <td scope="row">8</td>
-            <td>Somoe Mkwachu</td>
-        </tr>
+        <% if (coachers.length != 0) { %> 
+            <% for (var i = 0; i < coachers.length; i++) {%> 
+                <tr>
+                    <td scope="row"><%= i + 1 %> </td>
+                    <td><%= coachers[i].name %> </td>
+                </tr>
+            <% } %> 
+        <% } %> 
+        <% if (coachers.length == 0) { %> 
+            <tr>
+                <td scope="row" colspan="2" class="text-danger">Currently there are no coachers</td>
+            </tr>
+        <% } %> 
     </tbody>
 </table>
