@@ -10,3 +10,6 @@ exports.getActivities = (req, res, next) => {
 exports.getWorkforce = (req, res, next) => {
     res.render('workforce');
 }
+exports.getGallery = (req, res, next) => {
+    res.render('gallery');
+}

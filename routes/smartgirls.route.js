@@ -5,5 +5,6 @@ router.get("/", pages.getIndex);
 router.get("/about", pages.getAbout);
 router.get("/activities", pages.getActivities);
 router.get("/workforce", pages.getWorkforce);
+router.get("/gallery", pages.getGallery);
 
 module.exports = router;
