@@ -1,12 +1,16 @@
 exports.getIndex = (req, res, next) => {
-    res.render('home');
-}
+  res.render("home");
+};
 exports.getAbout = (req, res, next) => {
-    res.render('about');
-}
+  res.render("about");
+};
 exports.getActivities = (req, res, next) => {
-    res.render('activities');
-}
+  res.render("activities");
+};
 exports.getWorkforce = (req, res, next) => {
-    res.render('workforce');
-}
+  res.render("workforce");
+};
+
+exports.getDashboard = (req, res, next) => {
+  res.render("dashboard");
+};
