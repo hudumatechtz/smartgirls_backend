@@ -2,15 +2,15 @@
 <div id="services " class="services">
     <div class="container" data-aos="fade-up">
 
-        <div class="">
+        <div class="d-flex">
             <div class="section-title col-6">
                 <h2>Articles</h2>
                 <p>our Articles</p>
             </div>
-            <div class="col-6">
-                <a href="/add-article">
-                    <button type="button" class="btn ui primary labeled icon button"
-                        style="background: var(--other-color) !important; border: 1px solid var(--other-color) !important">
+            <div class="col-6 text-right mt-3">
+                <a href="/articles-admin/add-article">
+                    <button type="button" class="ui primary labeled icon button"
+                        style="background: var(--main-color) !important; border: 1px solid var(--main-color) !important">
                         <i class="plus icon"></i>
                         Add Article
                     </button>
@@ -18,7 +18,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row mt-0">
             <% for(i = 1; i <= 11; i++) { 
                 const src = "images/" + i + ".jpg" %>
             <%- include ("./article-card", {src: src}) %>
