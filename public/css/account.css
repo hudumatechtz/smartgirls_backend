@@ -31,6 +31,14 @@ input[type=text], input[type=number], input[type=password]{
     /* text-align: left !important; */
 }
 
+i{
+    margin: 25px auto 0 auto !important;
+    height: 40px !important;
+    padding: 25px 10px !important;
+    font-size: 20px !important;
+    outline: none !important;
+}
+
 button{
     width: 50%;
     margin-top: 50px;

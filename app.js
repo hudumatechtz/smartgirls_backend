@@ -7,7 +7,7 @@ const mongoDbStore = require("connect-mongodb-session")(session);
 const checkUser = require("./middlewares/check-user");
 require("dotenv").config();
 const MONGO_URI =
-  process.env.MONGO_URI || "mongodb://localhost:27017/girls_in_ict";
+  process.env.MONGO_URI;
 const PORT = process.env.PORT || 3000;
 const articleRoute = require("./routes/article.route");
 const pagesRoute = require("./routes/smartgirls.route");
