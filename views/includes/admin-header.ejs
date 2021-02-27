@@ -1,8 +1,16 @@
 <%- include("header") -%>
-<section style="min-height: 90vh; margin-top: 15px; display: flex; padding: 60px 0 0 0;">
-    <div style="flex-flow: column; flex: 1; background-color: var(--grey-color)">
+<section class="admin-header-section">
+    <div id="admin-navigation" class="admin-navigation">
+        <button id="button-left" class="btn btn-overlay" 
+            style="border: 2px solid var(--grey-color); position: fixed; top: 20%; left: 60%; height: 40px; width: 40px; border-radius: 0">
+            <i style="color: var(--grey-color)" class="ni ni-align-left-2"></i>
+        </button>
         <!-- NAVIGATION -->
         <%- include("smartgirls-navigation") -%>
     </div>
-    <div style="flex: 5; flex-flow: column;">
+    <button id="button-show" class="btn btn-overlay" 
+    style="border: 2px solid var(--grey-color); position: fixed; top: 20%; height: 40px; width: 40px; border-radius: 0">
+        <i style="color: var(--grey-color)" class="ni ni-bullet-list-67"></i>
+    </button>
+    <div class="admin-content">
         <div  class="container">
