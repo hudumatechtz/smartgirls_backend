@@ -18,10 +18,28 @@
             </div>
         </div>
 
-        <div class="row mt-0">
+       <div class="container about" data-aos="fade-up">
             <% for(i = 1; i <= 11; i++) { 
                 const src = "images/" + i + ".jpg" %>
-            <%- include ("./article-card", {src: src}) %>
+            <div class="row media content-section">
+                <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+                    <img src="<%= src %>" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content media-body text-justify"
+                    data-aos="fade-right" data-aos-delay="100">
+                    <div class="article-metadata d-flex">
+                        <a class="col-6" href="">Alpha Secondary School</a>
+                        <p class="col-6 text-muted text-right">Sat 11/01/2020 19:20:18</p>
+                    </div>
+                    <h3><a class="article-title" href="">Phase One</a>
+                    </h3>
+                    <p class="article-content">Our beloved students are trying to improve their solutions models during Phase 1 in 2019.</p>
+                    <ul>
+                        <li class="extra-article-content"><i class="ri-check-double-line"></i>This is extra description
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <% } %>
         </div>
     </div>

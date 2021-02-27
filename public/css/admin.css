@@ -78,3 +78,24 @@
 .active-admin-link:hover {
     background: var(--main-color) !important;
 }
+
+button{
+    margin-top: 50px;
+    height: 50px;
+    color: var(--white-color) !important;
+    border: 1px solid var(--main-color) !important;
+    /* border-radius: 25px !important; */
+    cursor: pointer;
+    background: var(--main-color) !important;
+    font-size: 16px !important;
+    /* text-transform: uppercase; */
+    transition: 0.35s !important;
+}
+button:hover {
+    /* color: var(--white-color);
+    background: var(--main-color) !important;
+    box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.1);
+    color: var(--white-color) !important;
+    background: var(--main-color) !important; */
+    transform: scale(1.1);
+}
