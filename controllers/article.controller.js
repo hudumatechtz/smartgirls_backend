@@ -8,11 +8,14 @@ exports.postArticle = async (req, res, next) => {
 };
 exports.getArticles = async (req, res, next) => {
   try {
-    res.send("<h3>Girls articles page</h3>");
+    res.render("articles");
   } catch (error) {
     next(error);
   }
 };
+exports.getAdminArticles = async (req, res, next) => {
+  res.render('articles-admin');
+}
 exports.getAddArticle = (req, res, next)=>{
   res.render('add-article');
 }

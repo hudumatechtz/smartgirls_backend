@@ -75,7 +75,7 @@ app.use((req, res, next) => {
   next();
 })
 //ROUTES
-app.use("/article", articleRoute);
+app.use(articleRoute);
 app.use(pagesRoute);
 app.use("/account", authroute);
 app.use("/", (req, res, next) => {
