@@ -312,7 +312,7 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-nav-toggle {
   position: fixed;
   top: 20px;
-  right: 15px;
+  right: 5px;
   z-index: 9998;
   border: 0;
   background: none;
