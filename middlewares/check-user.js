@@ -5,6 +5,7 @@ module.exports = async (req, res, next)=>{
             console.log("Here")
             return next();
         }
+        console.log('got user');
         const user = await User.findById(req.session.user._id);
         if(!user){
             console.log("No user");

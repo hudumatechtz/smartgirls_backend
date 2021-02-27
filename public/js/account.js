@@ -27,7 +27,7 @@ const authorize = async () => {
       window.location.replace("/dashboard");
     }
     spinner.classList.add('not-spin');
-    spinner.classList.remove('not-spin');
+    loginBtn.classList.remove('not-spin');
     // window.location.reload();
   } catch (error) {
     spinner.classList.add('not-spin');
