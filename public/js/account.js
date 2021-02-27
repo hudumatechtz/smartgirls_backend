@@ -1,10 +1,14 @@
 const loginForm = document.forms["form"];
 let url = "/account";
-document.querySelector("#login-button").addEventListener("click", () => {
+const spinner = document.querySelector(".not-spin");
+const loginBtn = document.querySelector("#login-button");
+loginBtn.addEventListener("click", () => {
   authorize();
 });
 
 const authorize = async () => {
+  spinner.classList.remove('not-spin');
+  loginBtn.classList.add("not-spin");
   const formData = new FormData();
   formData.append("username", loginForm["username"].value);
   formData.append("password", loginForm["password"].value);
@@ -17,12 +21,17 @@ const authorize = async () => {
       body: formData,
     });
     const response = await rawFetch.json();
+    
     console.log(response);
     if (response.match) {
       window.location.replace("/dashboard");
     }
+    spinner.classList.add('not-spin');
+    spinner.classList.remove('not-spin');
     // window.location.reload();
   } catch (error) {
+    spinner.classList.add('not-spin');
+    loginBtn.classList.remove('not-spin');
     console.log(error);
   }
 };
