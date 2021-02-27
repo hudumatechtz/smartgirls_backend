@@ -20,19 +20,20 @@ section #login {
     /* height: 100%; */
 }
 input[type=text], input[type=number], input[type=password]{
-    width: 70%;
-    margin: 8px auto;
-    height: 40px;
-    padding: 25px 10px;
-    border: 1px solid var(--main-color) !important;
+    width: 70% !important;
+    margin: 25px auto 0 auto !important;
+    height: 40px !important;
+    padding: 25px 10px !important;
+    /* border: 1px solid var(--main-color) !important; */
     /* border-radius: 30px !important; */
-    font-size: 20px;
-    outline: none;
+    font-size: 20px !important;
+    outline: none !important;
+    /* text-align: left !important; */
 }
 
 button{
-    width: 70%;
-    margin-top: 20px;
+    width: 50%;
+    margin-top: 50px;
     height: 50px;
     color: var(--white-color) !important;
     border: 1px solid var(--main-color) !important;
@@ -44,12 +45,12 @@ button{
     /* text-transform: uppercase; */
     transition: 0.35s !important;
 }
-button:hover, button:focus {
+button:hover {
     /* color: var(--white-color);
     background: var(--main-color) !important;
-    box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.1); */
-    /* color: var(--white-color) !important; */
-    /* background: var(--main-color) !important; */
+    box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.1);
+    color: var(--white-color) !important;
+    background: var(--main-color) !important; */
     transform: scale(1.1);
 }
 .not-spin{
