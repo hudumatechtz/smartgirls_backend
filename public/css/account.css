@@ -62,7 +62,7 @@ button:hover {
     transform: scale(1.1);
 }
 .not-spin{
-    display: none;
+    display: none !important;
 }
 section #cover {
     flex: 2;
