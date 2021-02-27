@@ -13,3 +13,6 @@ exports.getArticles = async (req, res, next) => {
     next(error);
   }
 };
+exports.getAddArticle = (req, res, next)=>{
+  res.render('add-article');
+}

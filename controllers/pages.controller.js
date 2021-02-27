@@ -16,3 +16,4 @@ exports.getGallery = (req, res, next) => {
 exports.getDashboard = (req, res, next) => {
   res.render("dashboard");
 };
+
