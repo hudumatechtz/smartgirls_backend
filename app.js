@@ -63,13 +63,17 @@ app.use(
 // });
 app.use(
   session({
-    secret: "callback wizard",
+    secret: "girls_in_ict",
     resave: false,
     saveUninitialized: false,
     store: store,
   })
 );
 app.use(checkUser);
+app.use((req, res, next) => {
+  res.locals.isAuthenticated = req.session.isLoggedIn;
+  next();
+})
 //ROUTES
 app.use("/article", articleRoute);
 app.use(pagesRoute);

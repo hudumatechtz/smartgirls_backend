@@ -20,6 +20,9 @@ exports.postLogin = async (req, res, next) => {
     if (!doMatch) {
       throw error;
     }
+    req.session.isLoggedIn = doMatch;
+    req.session.user = user;
+    req.session.save();
     res.json({ match: doMatch });
   } catch (error) {
     next(error);
@@ -47,4 +50,11 @@ exports.postRegister = async (req, res, next) => {
   } catch (error) {
     next(error);
   }
+};
+
+exports.getLogout = (req, res, next) => {
+  req.session.destroy((err) => {
+    if (err) console.log(err);
+    res.redirect("/");
+  });
 };
