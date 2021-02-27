@@ -1,6 +1,6 @@
 :root {
     --main-color: #fc4445;
-    --black-color: #495070;
+    --black-color: #000000;
     --white-color: #ffffff;
     --grey-color: #e9ecef;
     --other-color: #2f2fa2;
@@ -41,4 +41,29 @@ h2 {
 }
 .content-container > div {
     margin-bottom: 30px;
+}
+.active-header-link {
+    color: var(--main-color) !important;
+}
+a.active-header-link:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: var(--main-color);
+    width: 100%; 
+    left: 0; 
+}
+.active-header-drop-down-link {
+    background: var(--main-color) !important;
+    color: var(--white-color) !important;
+}
+@media (max-width: 991px) {
+    .active-header-link {
+        background: var(--main-color) !important;
+        color: var(--white-color) !important;
+    }
 }

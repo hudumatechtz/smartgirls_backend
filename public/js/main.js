@@ -6,7 +6,6 @@
 */
 !(function($) {
   "use strict";
-
   // Preloader
   // $(window).on('load', function() {
   //   if ($('#preloader').length) {

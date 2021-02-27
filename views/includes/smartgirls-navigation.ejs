@@ -10,3 +10,15 @@ height: 300px; box-sizing: border-box; display: flex; flex-direction: column;">
         <a href="/article/add-article">Add article</a>
     </div> -->
 </nav>
+<script>
+    (function () {
+        var currentLink = location.pathname.split('/')[1];
+        if (currentLink === "") return;
+        var dashboardLinks = document.querySelectorAll('.admin-link a');
+        for (var i = 0, len = dashboardLinks.length; i < len; i++) {
+            if (dashboardLinks[i].getAttribute("href").indexOf(currentLink) !== -1) {
+                dashboardLinks[i].className += " active-admin-link";
+            }
+        }
+    })();
+</script>
