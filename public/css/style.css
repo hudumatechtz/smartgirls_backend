@@ -4,6 +4,7 @@
     --white-color: #ffffff;
     --grey-color: #e9ecef;
     --other-color: #2f2fa2;
+    --product-gap: 10px;
 }
 html, body {
     height: 100%;

@@ -1,0 +1,134 @@
+img {
+    cursor: pointer;
+    transition: 0.3s;
+}
+img:hover {
+    opacity: 0.7;
+}
+.gallery-image-wrapper {
+    align-self: stretch !important;
+    box-shadow: 2px 2px 10px rgba(0,0,0, 0.1);
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: var(--product-gap) 0 0 var(--product-gap);
+}
+.gallery-image {
+    position: relative;
+    width: 100%;
+    padding-top: 70%;
+}
+.gallery-image img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    object-fit: fill;
+    overflow: no-display;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .gallery-image-wrapper {
+        width: calc(50% - var(--product-gap));
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .gallery-image-wrapper {
+        width: calc(50% - var(--product-gap));
+    }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .gallery-image-wrapper {
+        width: calc(33.333% - var(--product-gap));
+    }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .gallery-image-wrapper {
+      width: calc(33.333% - var(--product-gap));
+    }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .gallery-image-wrapper {
+      width: calc(33.333% - var(--product-gap));
+    }
+} 
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    /* padding-top: 100px; Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+} 
+ /* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    position: relative;
+    /* left: 50%; */
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 700px;
+} 
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+} 
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform:scale(0)
+    } 
+    to {
+        -webkit-transform:scale(1)
+    }
+}
+  
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+  
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 80px;
+    right: 40px;
+    color: var(--white-color);
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+  
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+  /* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+      width: 90%;
+    }
+}
+  
