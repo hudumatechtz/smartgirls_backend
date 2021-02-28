@@ -31,6 +31,13 @@ a {
    line-height: 1.9;
 }
 
+@media (max-width: 426px) {
+    .image-home {
+        min-height: 345px !important;
+        height: 345px;
+    }
+}
+
 /* SPONSORS */
 .sponsors{
     background-image: url(../images/01.jpg);
