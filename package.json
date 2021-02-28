@@ -9,14 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/benfild/smartgirls_backend.git"
+    "url": "git+https://github.com/techautovity/smartgirls_backend.git"
+    https://github.com/techautovity/smartgirls_backend
   },
   "author": "GirlsInICT UDSM",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/benfild/smartgirls_backend/issues"
+    "url": "https://github.com/techautovity/smartgirls_backend/issues"
   },
-  "homepage": "https://github.com/benfild/smartgirls_backend#readme",
+  "homepage": "https://github.com/techautovity/smartgirls_backend#readme",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
