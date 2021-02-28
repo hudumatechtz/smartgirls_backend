@@ -1,16 +1,15 @@
 <%- include("includes/admin-header") %>
-<div id="services " class="services">
+<div id="services " class="services" style="overflow: hidden">
     <div class="container" data-aos="fade-up">
-
-        <div class="d-flex">
-            <div class="section-title col-6">
-                <h2>Articles</h2>
+        <div class="d-flex row">
+            <div class="section-title col-6 mt-2">
+                <!-- <h2>Articles</h2> -->
                 <p>our Articles</p>
             </div>
-            <div class="col-6 text-right mt-3">
+            <div class="col-6 text-right mt-2" style="padding-left: 0; padding-right: 0">
                 <a href="/articles-admin/add-article">
-                    <button type="button" class="ui primary labeled icon button"
-                        style="background: var(--main-color) !important; border: 1px solid var(--main-color) !important">
+                    <button type="button" id="add-article-button" class="ui primary labeled icon button"
+                        style="background: var(--main-color) !important; border: 1px solid var(--main-color) !important; margin-right: 0">
                         <i class="plus icon"></i>
                         Add Article
                     </button>
@@ -18,18 +17,18 @@
             </div>
         </div>
 
-       <div class="container about" data-aos="fade-up">
+       <div class="about" data-aos="fade-up">
             <% for(i = 1; i <= 11; i++) { 
                 const src = "images/" + i + ".jpg" %>
-            <div class="row media content-section">
-                <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+            <div class="row media content-section box-shadow">
+                <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100" style="padding: 0">
                     <img src="<%= src %>" class="img-fluid" alt="">
                 </div>
-                <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content media-body text-justify"
+                <div class="col-lg-6 pt-2 pl-3 pr-3 pt-lg-0 order-2 order-lg-1 content media-body text-justify"
                     data-aos="fade-right" data-aos-delay="100">
-                    <div class="article-metadata d-flex">
-                        <a class="col-6" href="">Alpha Secondary School</a>
-                        <p class="col-6 text-muted text-right">Sat 11/01/2020 19:20:18</p>
+                    <div class="article-metadata d-flex mt-2">
+                        <a class="col-6" href="" style="padding: 0; text-align: left">Alpha Secondary School</a>
+                        <p class="col-6 text-muted text-right" style="padding: 0;">Sat 11/01/2020 19:20:18</p>
                     </div>
                     <h3><a class="article-title" href="">Phase One</a>
                     </h3>

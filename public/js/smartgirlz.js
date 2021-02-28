@@ -1,12 +1,14 @@
 // Admin Navigation toggle on Small Device
 var buttonShow = document.getElementById("button-show");
 buttonShow.addEventListener("click", function() {
+    document.body.style.position = "fixed";
     if ( document.getElementById("admin-navigation").classList.contains('admin-navigation')) {
         document.getElementById("admin-navigation").classList.toggle('display-admin-navigation');
     }
 });
-var buttonHide = document.getElementById("button-left");
+var buttonHide = document.getElementById("button-hide");
 buttonHide.addEventListener("click", function() {
+    document.body.style.position = "relative";
     if (document.getElementById("admin-navigation").classList.toggle('display-admin-navigation')) {
         document.getElementById("admin-navigation").classList.contains('admin-navigation');
     }

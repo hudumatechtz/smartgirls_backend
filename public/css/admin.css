@@ -10,7 +10,10 @@
 .admin-navigation {
     flex-flow: column; 
     flex: 1; 
-    background-color: var(--grey-color)
+    position: sticky;
+    top: 70px;
+    height: 100vh;
+    background-color: var(--grey-color);
 }
 .admin-content {
     flex: 5; 

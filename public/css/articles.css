@@ -1,15 +1,18 @@
 @import "./style.css";
 .content-section {
-  background: #fafafa;
-  padding: 7px 0;
+  background: hsl(0, 0%, 98%);
+  /* padding: 7px 0; */
   border: 1px solid #dddddd;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   margin-bottom: 20px;
 }
-
+.section-title {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
 .article-title {
   color: #444444;
-  font-size: 40px;
+  font-size: 35px;
   line-height: 45px;
 }
 
@@ -20,12 +23,13 @@ a.article-title:hover {
 
 .article-content {
   white-space: pre-line;
-  font-size: 1.5em;
+  text-align: left;
+  font-size: 1.2em;
 }
 
 .extra-article-content {
   white-space: pre-line;
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 
 
@@ -54,4 +58,28 @@ a.article-title:hover {
   width: 25px;
   height: 25px;
   vertical-align: middle;
+}
+@media (max-width: 840px) {
+  .section-title p {
+    font-size: 30px;
+  }
+}
+@media (max-width: 633px) and (min-width: 601px) {
+  .section-title p {
+    font-size: 25px;
+  }
+}
+@media (max-width: 455px) {
+  .section-title p {
+    font-size: 25px;
+  }
+}
+@media (max-width: 400px) {
+  .section-title p {
+    font-size: 20px;
+  }
+  #add-article-button {
+    height: 40px;
+    font-size: 12px !important;
+  }
 }
