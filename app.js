@@ -6,13 +6,14 @@ const session = require("express-session");
 const mongoDbStore = require("connect-mongodb-session")(session);
 const checkUser = require("./middlewares/check-user");
 require("dotenv").config();
-const MONGO_URI =
-  process.env.MONGO_URI;
+const MONGO_URI = process.env.MONGO_URI;
 const PORT = process.env.PORT || 3000;
 const articleRoute = require("./routes/article.route");
 const pagesRoute = require("./routes/smartgirls.route");
 const authroute = require("./routes/auth.route");
 const multer = require("multer");
+const cookie = require("cookie-parser");
+const parser = require("body-parser");
 
 const store = new mongoDbStore(
   {
@@ -26,32 +27,41 @@ const store = new mongoDbStore(
 
 const fileFilter = (req, file, cb) => {
   if (
-    (file.mimetype === "image/jpg",
-    file.mimetype === "image/jpeg",
-    file.mimetype === "image/png")
+    file.mimetype === "image/jpeg" ||
+    file.mimetype === "image/png" ||
+    file.mimetype === "image/jpg"
   ) {
+    console.log("hello suce");
     return cb(null, true);
   }
+  console.log("hello");
   cb(null, false);
 };
 const fileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "assets");
+    cb(null, "assets/images");
   },
   filename: (req, file, cb) => {
-    cb(null, new Date().toISOString() + "-" + file.filename);
+    cb(
+      null,
+      new Date().toISOString().split(":").join("").split("-").join("") +
+        "-" +
+        "smart_girl" +
+        Math.floor(1000 + Math.random() * 9000) +
+        file.originalname.substring(file.originalname.indexOf("."))
+    );
   },
 });
 //MIDDLEWARES
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// app.use(express.json());
 app.set("views", "views");
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
-app.use("/images", express.static(path.join(__dirname, "images")));
-app.use(
-  multer({ fileFilter: fileFilter, storage: fileStorage }).single("image")
-);
+app.use("/assets", express.static(path.join(__dirname, "assets")));
+app.use(cookie());
+// app.use(parser.json());
+
 // app.use((req, res, next) => {
 //   res.setHeader("Access-Control-Allow-Origin", "*");
 //   res.setHeader("Access-Control-Allow-Methods", "*");
@@ -73,7 +83,10 @@ app.use(checkUser);
 app.use((req, res, next) => {
   res.locals.isAuthenticated = req.session.isLoggedIn;
   next();
-})
+});
+app.use(
+  multer({ storage: fileStorage, fileFilter: fileFilter }).single("image")
+);
 //ROUTES
 app.use(articleRoute);
 app.use(pagesRoute);
