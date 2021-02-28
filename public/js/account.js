@@ -2,6 +2,7 @@ const loginForm = document.forms["form"];
 let url = "/account";
 const spinner = document.querySelector(".not-spin");
 const loginBtn = document.querySelector("#login-button");
+const backHomeBtn = document.querySelector("#back-home-button");
 loginBtn.addEventListener("click", () => {
   authorize();
 });
@@ -9,6 +10,7 @@ loginBtn.addEventListener("click", () => {
 const authorize = async () => {
   spinner.classList.remove('not-spin');
   loginBtn.classList.add("not-spin");
+  backHomeBtn.classList.add("not-spin");
   const formData = new FormData();
   formData.append("username", loginForm["username"].value);
   formData.append("password", loginForm["password"].value);
@@ -27,11 +29,13 @@ const authorize = async () => {
       window.location.replace("/dashboard");
     }
     spinner.classList.add('not-spin');
-    loginBtn.classList.remove('not-spin');
+    // loginBtn.classList.remove('not-spin');
+    // backHomeBtn.classList.remove("not-spin");
     // window.location.reload();
   } catch (error) {
     spinner.classList.add('not-spin');
     loginBtn.classList.remove('not-spin');
+    backHomeBtn.classList.remove("not-spin");
     console.log(error);
   }
 };

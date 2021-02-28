@@ -10,7 +10,10 @@
 .admin-navigation {
     flex-flow: column; 
     flex: 1; 
-    background-color: var(--grey-color)
+    position: sticky;
+    top: 70px;
+    height: 100vh;
+    background-color: var(--grey-color);
 }
 .admin-content {
     flex: 5; 
@@ -50,6 +53,7 @@
     position: absolute;
     width: 60%;
     height: 100vh;
+    top: 60px !important;
     left: 0;
     z-index: 2;
     background-color: var(--grey-color);
@@ -77,4 +81,25 @@
 }
 .active-admin-link:hover {
     background: var(--main-color) !important;
+}
+
+button{
+    margin-top: 50px;
+    height: 50px;
+    color: var(--white-color) !important;
+    border: 1px solid var(--main-color) !important;
+    /* border-radius: 25px !important; */
+    cursor: pointer;
+    background: var(--main-color) !important;
+    font-size: 16px !important;
+    /* text-transform: uppercase; */
+    transition: 0.35s !important;
+}
+button:hover {
+    /* color: var(--white-color);
+    background: var(--main-color) !important;
+    box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.1);
+    color: var(--white-color) !important;
+    background: var(--main-color) !important; */
+    transform: scale(1.1);
 }

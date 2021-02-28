@@ -1,6 +1,7 @@
 <%- include ("includes/header") -%>
 <!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex align-items-center justify-content-center"
+<div style="overflow: hidden">
+  <section id="hero" class="d-flex align-items-center justify-content-center"
   style="background: url(images/8.jpg) no-repeat center center fixed; background-size: cover;">
   <div class="container" data-aos="fade-up">
 
@@ -83,7 +84,8 @@
       </div>
 
     </div>
-  </section><!-- End About Section -->
+  </section>
+  <!-- End About Section -->
 
   <!-- ======= Sponsors Section ======= -->
   <section id="clients" class="clients">
@@ -106,7 +108,9 @@
     <div class="container" data-aos="fade-up">
 
       <div class="row">
-        <div class="image col-lg-6" style='background-image: url("images/7.jpg");' data-aos="fade-right">
+        <div style="padding: 0 15px" class="col-lg-6">
+          <div class="image " style='background-image: url("images/7.jpg"); height: 100%' data-aos="fade-right">
+          </div>
         </div>
         <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
           <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
@@ -142,16 +146,17 @@
 
       <div class="section-title">
         <h2>Articles</h2>
-        <p>Check our Articles</p>
+        <p>Check our recent Articles</p>
       </div>
 
-      <div class="row">
-        <% for(i = 3; i <= 5; i++) { 
-                const src = "images/" + i + ".jpg" %>
-        <%- include ("./article-card", {src: src}) %>
+      <div class="about" data-aos="fade-up">
+        <% for(i = 3; i <= 5; i++) { %>
+          <% const src = "images/" + i + ".jpg" %>
+          <%- include ("article-card", {src: src}) %>
         <% } %>
       </div>
-  </section><!-- End Recent Articles Section -->
+  </section>
+  <!-- End Recent Articles Section -->
 
   <!-- ======= Cta Section ======= -->
   <section id="cta" class="cta">
@@ -167,28 +172,29 @@
       </div>
 
     </div>
-  </section><!-- End Cta Section -->
+  </section>
+  <!-- End Cta Section -->
 
   <!-- ======= Portfolio Section ======= -->
   <section id="portfolio" class="portfolio">
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
-        <h2>Portfolio</h2>
-        <p>Check our Portfolio</p>
+        <h2>Gallery</h2>
+        <p>Check our Gallery</p>
       </div>
 
       <div class="row" data-aos="fade-up" data-aos-delay="100">
         <div class="col-lg-12 d-flex justify-content-center">
           <ul id="portfolio-flters">
-            <li data-filter="*" class="filter-active"><a style="color: unset" href="/gallery">ALL</a></li>
+            <li data-filter="*" class="filter-active"><a style="color: var(--white-color); height: 100%; width: 100%" href="/gallery">ALL</a></li>
           </ul>
         </div>
       </div>
 
       <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-        <% for(i = 2; i <= 10; i++) { 
+        <% for(i = 2; i <= 7; i++) { 
                 const src = "images/" + i + ".jpg" %>
         <%- include ("./portfolio", {src: src}) %>
         <% } %>
@@ -196,7 +202,8 @@
       </div>
 
     </div>
-  </section><!-- End Portfolio Section -->
+  </section>
+  <!-- End Portfolio Section -->
 
   <!-- ======= Counts Section ======= -->
   <%- include ("./counts") %>
@@ -211,5 +218,6 @@
   <!-- End Contact Section -->
 
 </main><!-- End #main -->
+</div>
 
 <%- include ("includes/footer") -%>

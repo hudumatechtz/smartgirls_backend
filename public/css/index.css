@@ -56,3 +56,6 @@ a {
 .recent-articles, .intro{
     margin-top: 3em;
 }
+.filter-active:hover {
+    transform: scale(1.1);
+}

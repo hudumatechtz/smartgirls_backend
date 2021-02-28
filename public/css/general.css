@@ -311,17 +311,21 @@ h1, h2, h3, h4, h5, h6 {
 /* Mobile Navigation */
 .mobile-nav-toggle {
   position: fixed;
-  top: 20px;
+  margin-top: unset;
+  height: 38px;
+  width: 38px;
+  top: 15px;
   right: 15px;
   z-index: 9998;
   border: 0;
-  background: none;
-  font-size: 24px;
+  background: none !important;
+  font-size: 30px !important;
   transition: all 0.4s;
   outline: none !important;
   line-height: 1;
   cursor: pointer;
-  text-align: right;
+  border: none !important;
+  text-align: left !important;
 }
 
 .mobile-nav-toggle i {
@@ -523,7 +527,6 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 section {
   padding: 60px 0;
-  overflow: hidden;
 }
 
 .section-title {

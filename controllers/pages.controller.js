@@ -25,3 +25,4 @@ exports.getTrainers = (req, res, next) => {
 exports.getCoachers = (req, res, next) => {
   res.render("coachers-admin");
 }
+
