@@ -108,7 +108,7 @@
     <div class="container" data-aos="fade-up">
 
       <div class="row">
-        <div style="padding: 0 10px" class="col-lg-6">
+        <div style="padding: 0 15px" class="col-lg-6">
           <div class="image " style='background-image: url("images/7.jpg"); height: 100%' data-aos="fade-right">
           </div>
         </div>
@@ -149,10 +149,10 @@
         <p>Check our recent Articles</p>
       </div>
 
-      <div class="row">
-        <% for(i = 3; i <= 5; i++) { 
-                const src = "images/" + i + ".jpg" %>
-        <%- include ("./article-card", {src: src}) %>
+      <div class="col-12">
+        <% for(i = 3; i <= 5; i++) { %>
+          <% const src = "images/" + i + ".jpg" %>
+          <%- include ("article-card", {src: src}) %>
         <% } %>
       </div>
   </section>
@@ -194,7 +194,7 @@
 
       <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-        <% for(i = 2; i <= 10; i++) { 
+        <% for(i = 2; i <= 7; i++) { 
                 const src = "images/" + i + ".jpg" %>
         <%- include ("./portfolio", {src: src}) %>
         <% } %>
