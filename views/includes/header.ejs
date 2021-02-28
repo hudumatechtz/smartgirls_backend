@@ -29,7 +29,7 @@
   <link href="/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="/vendor/aos/aos.css" rel="stylesheet">
   <link href="/vendor/nucleo/css/nucleo.css" rel="stylesheet">
-  <link href="/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+  <link href="/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="/css/general.css" rel="stylesheet">
   <link href="/css/gallery.css" rel="stylesheet">
   <link href="/css/index.css" rel="stylesheet">
@@ -51,17 +51,20 @@
           <li><a class="header-link" href="/about">About Us</a></li>
           <li class="drop-down drop-down-links"><a href="#">Activities<span></span></a>
             <ul>
-              <li><a class="header-drop-down-link" href="/activities">Year 2020</a></li>
-              <li><a class="header-drop-down-link" href="">Year 2021</a></li>
+              <li><a class="header-drop-down-link" href="/activities">HCD Training</a></li>
+              <li><a class="header-drop-down-link" href="">Pitching</a></li>
+              <li><a class="header-drop-down-link" href="">Solution Prototyping</a></li>
+              <li><a class="header-drop-down-link" href="">In-school Competition</a></li>
+              <li><a class="header-drop-down-link" href="">International Girls in ICT day</a></li>
             </ul>
           </li>
           <li><a class="header-link" href="/workforce">The Workforce</a></li>
           <li><a class="header-link" href="/articles">Articles</a></li>
           <li><a class="header-link" href="/gallery">Gallery</a></li>
           <li><a class="header-link" href="#clients">Partners</a></li>
-          <% if (isAuthenticated) { %> 
-            <li><a class="header-link" href="/dashboard">Admin</a></li>
-          <% } %> 
+          <% if (isAuthenticated) { %>
+          <li><a class="header-link" href="/dashboard">Admin</a></li>
+          <% } %>
         </ul>
       </nav><!-- End Nav -->
       <% if (!isAuthenticated) { %>
@@ -73,19 +76,19 @@
   </header><!-- End Header -->
   <script>
     (function () {
-        var currentLink = location.pathname.split('/')[1];
-        if (currentLink === "") return;
-        var headerLinks = document.querySelectorAll('.header-link');
-        for (var i = 0, len = headerLinks.length; i < len; i++) {
-            if (headerLinks[i].getAttribute("href").indexOf(currentLink) !== -1) {
-              headerLinks[i].className += " active-header-link";
-            }
+      var currentLink = location.pathname.split('/')[1];
+      if (currentLink === "") return;
+      var headerLinks = document.querySelectorAll('.header-link');
+      for (var i = 0, len = headerLinks.length; i < len; i++) {
+        if (headerLinks[i].getAttribute("href").indexOf(currentLink) !== -1) {
+          headerLinks[i].className += " active-header-link";
         }
-        var headerDropDownLinks = document.querySelectorAll('.header-drop-down-link');
-        for (var i = 0, len = headerDropDownLinks.length; i < len; i++) {
-            if (headerDropDownLinks[i].getAttribute("href").indexOf(currentLink) !== -1) {
-              headerDropDownLinks[i].className += " active-header-drop-down-link";
-            }
+      }
+      var headerDropDownLinks = document.querySelectorAll('.header-drop-down-link');
+      for (var i = 0, len = headerDropDownLinks.length; i < len; i++) {
+        if (headerDropDownLinks[i].getAttribute("href").indexOf(currentLink) !== -1) {
+          headerDropDownLinks[i].className += " active-header-drop-down-link";
         }
+      }
     })();
   </script>
