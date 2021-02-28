@@ -1,29 +1,28 @@
 const Article = require("../models/article.model");
 exports.postArticle = async (req, res, next) => {
   const { title, description } = req.body;
+  let message = "";
   try {
     if (!req.file) {
       const error = new Error("No image file was provided");
       error.statusCode = 422;
-      throw error;
+      return res.render("add-article", { message: error.message });
     }
     const creator = req.user.username;
     const imageUrl = req.file.path;
-
     const newArticle = new Article({
       title: title,
       description: description,
       imageUrl: imageUrl,
       creator: creator,
     });
-    const message = '';
     const savedArticle = await newArticle.save();
-    if(!savedArticle){
-      message = "Artcle could not be posted";
-      return res.render("", {message: message});
+    if (!savedArticle) {
+      message = "Article could not be posted";
+      return res.render("add-article", { message: message });
     }
-    message = "Article was posted successfuly";
-    res.render("", {message: message});
+    message = "Article was posted successfuly, To view go to articles";
+    res.render("add-article", { message: message });
   } catch (error) {
     next(error);
   }
@@ -36,8 +35,13 @@ exports.getArticles = async (req, res, next) => {
   }
 };
 exports.getAddArticle = (req, res, next) => {
-  res.render("add-article");
+  res.render("add-article", { message: "" });
 };
 exports.getAdminArticles = async (req, res, next) => {
-  res.render('articles-admin');
-}
+  try {
+    // const articles = await Article.find({}).limit(15);
+    res.render("articles-admin"); 
+  } catch (error) {
+    next(error);
+  }
+};
