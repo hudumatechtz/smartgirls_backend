@@ -3,7 +3,7 @@
   background: hsl(0, 0%, 98%);
   /* padding: 7px 0; */
   border: 1px solid #dddddd;
-  /* border-radius: 10px; */
+  border-radius: 3px;
   margin-bottom: 20px;
 }
 .section-title {
