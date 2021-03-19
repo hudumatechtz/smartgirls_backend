@@ -13,8 +13,7 @@ const pagesRoute = require("./routes/smartgirls.route");
 const authroute = require("./routes/auth.route");
 const multer = require("multer");
 const cookie = require("cookie-parser");
-const parser = require("body-parser");
-
+const blocker = require("./middlewares/blocker");
 const store = new mongoDbStore(
   {
     uri: MONGO_URI,
@@ -25,6 +24,7 @@ const store = new mongoDbStore(
   }
 );
 
+app.use(blocker);
 const fileFilter = (req, file, cb) => {
   if (
     file.mimetype === "image/jpeg" ||
