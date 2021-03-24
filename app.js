@@ -24,7 +24,7 @@ const store = new mongoDbStore(
   }
 );
 
-app.use(blocker);
+//app.use(blocker);
 const fileFilter = (req, file, cb) => {
   if (
     file.mimetype === "image/jpeg" ||
