@@ -1,7 +1,7 @@
 const Article = require("../models/article.model");
 
 exports.getIndex = async (req, res, next) => {
-  Article.deleteMany();
+  Article.deleteMany({ title: "Bread London" });
   const articles = await Article.find();
   try {
     res.render("home", { articles: articles });
