@@ -37,3 +37,10 @@ jQuery(function($){
         }
     }
 })();
+
+//CKEDITOR FORM
+$(function () {
+  if ($("textarea#ta").length) {
+    CKEDITOR.replace("ta", { enterMode: CKEDITOR.ENTER_BR });
+  }
+});
