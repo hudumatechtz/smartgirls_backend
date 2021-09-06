@@ -59,19 +59,44 @@ a.article-title:hover {
   height: 25px;
   vertical-align: middle;
 }
+
+
+.add-article .add-article-form {
+  padding: 30px;
+  background: #ffffff;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px 0 rgba(153, 148, 148, 0.664);
+  border-radius: 5px;
+}
+
 @media (max-width: 840px) {
   .section-title p {
     font-size: 30px;
+  }
+  .article-img {
+    height: 350px;
+    width: 100%;
+    margin: 0;
   }
 }
 @media (max-width: 633px) and (min-width: 601px) {
   .section-title p {
     font-size: 25px;
   }
+  .article-img {
+    height: 300px;
+    width: 100%;
+    margin: 0;
+  }
 }
 @media (max-width: 455px) {
   .section-title p {
     font-size: 25px;
+  }
+  .article-img {
+    height: 300px;
+    width: 100%;
+    margin: 0;
   }
 }
 @media (max-width: 400px) {
@@ -81,5 +106,10 @@ a.article-title:hover {
   #add-article-button {
     height: 40px;
     font-size: 12px !important;
+  }
+  .article-img {
+    height: 300px;
+    width: 100%;
+    margin: 0;
   }
 }

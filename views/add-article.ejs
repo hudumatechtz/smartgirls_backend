@@ -1,32 +1,36 @@
 <%- include("includes/admin-header") -%>
 <!-- CONTENTS -->
-<form name="form" method="POST" action="/articles-admin/add-article" enctype="multipart/form-data">
-    <legend style="text-align: center; font-size: 30px;">ADD NEW ARTICLE</legend>
-    <div class="form-group">
-        <label for="title"></label>
-        <input type="text" class="form-control text-center" id="title" placeholder="Article title" name="title">
-    </div>
-    <div class="form-group">
-        <label for="image"></label>
-        <input type="file" class="form-control text-center" id="image" name="image">
-    </div>
-    <!-- <div class="form-group">
+<div class="add-article">
+    <div class="container">
+        <div class="add-article-form">
+            <form name="form" method="POST" action="/articles-admin/add-article" enctype="multipart/form-data">
+                <legend style="text-align: center; font-size: 30px;">ADD NEW ARTICLE</legend>
+                <div class="form-group">
+                    <label for="title"></label>
+                    <input type="text" class="form-control text-center" id="title" placeholder="Article title"
+                        name="title">
+                </div>
+                <div class="form-group">
+                    <label for="image"></label>
+                    <input type="file" class="form-control text-center" id="image" name="image">
+                </div>
+                <!-- <div class="form-group">
         <label for=""></label>
         <input type="text" class="form-control text-center" id="description" placeholder="extra stuff"
             name="">
     </div> -->
-    <div class="form-group">
-        <label for="description"></label>
-        <textarea name="description" id="description" rows="10" placeholder="description"
-            style="width: 100%;"></textarea>
-    </div>
-    <% if(message != ''){%>
-        <div style="width: 100%; text-align: center;">
-            <h4 style="color: brown;">
-                <%= message %>
-            </h4>
-        </div>
-        <%}%>
+                <div class="form-group">
+                    <label for="description"></label>
+                    <textarea name="description" id="description ta" rows="10" placeholder="description"
+                        style="width: 100%;"></textarea>
+                </div>
+                <% if(message != ''){ %>
+                <div style="width: 100%; text-align: center;">
+                    <h4 style="color: brown;">
+                        <%= message %>
+                    </h4>
+                </div>
+                <% } %>
     <div class="text-center">
         <button type="submit" class="btn btn-primary" id="login-button">Save article</button>
     </div>
@@ -36,4 +40,8 @@
         </div>
     </div> -->
 </form>
+        </div>
+    </div>
+</div>
+
 <%- include("includes/admin-footer") -%>
