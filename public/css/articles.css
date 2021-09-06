@@ -34,9 +34,9 @@ a.article-title:hover {
 
 
 .article-img {
-  height: 50%;
-  width: 50%;
-  margin-right: 16px;
+  height: 400px;
+  width: 100%;
+  margin: 0;
 }
 
 .article-metadata {
