@@ -1,16 +1,16 @@
 <div class="row media content-section box-shadow">
     <div class="col-lg-6 p-lg-2 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100" style="padding: 0">
-        <img src="<%= src %>" class="img-fluid" alt="">
+        <img src="<%= article.imageUrl %>" class="img-fluid" alt="">
     </div>
     <div class="col-lg-6 pt-2 pl-3 pr-3 pt-lg-0 order-2 order-lg-1 content media-body text-justify"
         data-aos="fade-right" data-aos-delay="100">
         <div class="article-metadata d-flex mt-2">
-            <a class="col-6" href="" style="padding: 0; text-align: left">Alpha Secondary School</a>
-            <p class="col-6 text-muted text-right" style="padding: 0;">Sat 11/01/2019 19:20:18</p>
+            <a class="col-6" href="" style="padding: 0; text-align: left"><%= article.creator %></a>
+            <p class="col-6 text-muted text-right" style="padding: 0;"><%= article.createdAt %></p>
         </div>
         <h3><a class="article-title" href=""><%= article.title %></a>
         </h3>
-        <p class="article-content"><%= article.title %></p>
+        <p class="article-content"><%= article.description %></p>
         <ul style="padding: 0;">
             <li style="list-style-type: none !important;" class="extra-article-content"><i class="ri-check-double-line"></i>This is extra description
             </li>

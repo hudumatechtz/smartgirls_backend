@@ -28,7 +28,7 @@ exports.postArticle = async (req, res, next) => {
   }
 };
 exports.getArticles = async (req, res, next) => {
-  const articles = Article.find();
+  const articles = await Article.find();
   try {
     res.render("articles", {articles: articles});
   } catch (error) {
@@ -40,8 +40,8 @@ exports.getAddArticle = (req, res, next) => {
 };
 exports.getAdminArticles = async (req, res, next) => {
   try {
-    // const articles = await Article.find({}).limit(15);
-    res.render("articles-admin"); 
+    const articles = await Article.find({});
+    res.render("articles-admin", { articles: articles }); 
   } catch (error) {
     next(error);
   }
