@@ -23,7 +23,13 @@ const store = new mongoDbStore(
     if (err) console.log(err);
   }
 );
- 
+const moment = require("moment");
+
+app.use((req, res, next) => {
+   res.locals.moment = moment;
+   next();
+});
+
 //app.use(blocker);
 const fileFilter = (req, file, cb) => {
   if (
