@@ -156,10 +156,9 @@
         </div>
 
         <div class="about col-12" data-aos="fade-up">
-          <% for(i = 3; i <= 5; i++) { %>
-          <% const src = "images/" + i + ".jpg" %>
-          <%- include ("article-card", {src: src}) %>
-          <% } %>
+           <% articles.slice(-5).forEach((article) => { %>
+           <%- include ("article-card", {article: article}) %>
+           <% }); %>
         </div>
     </section>
     <!-- End Recent Articles Section -->
