@@ -60,9 +60,11 @@ a.article-title:hover {
   vertical-align: middle;
 }
 
-
+.add-article{
+  margin-top: 25px;
+}
 .add-article .add-article-form {
-  padding: 30px;
+  padding: 10px 30px;
   background: #ffffff;
   margin-bottom: 30px;
   box-shadow: 0 4px 8px 0 rgba(153, 148, 148, 0.664);
