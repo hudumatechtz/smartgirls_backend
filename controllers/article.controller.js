@@ -28,8 +28,9 @@ exports.postArticle = async (req, res, next) => {
   }
 };
 exports.getArticles = async (req, res, next) => {
+  const articles = Article.find();
   try {
-    res.render("articles");
+    res.render("articles", {articles: articles});
   } catch (error) {
     next(error);
   }
