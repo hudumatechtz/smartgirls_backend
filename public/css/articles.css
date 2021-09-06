@@ -74,6 +74,10 @@ a.article-title:hover {
   align-items: center;
 }
 
+label{
+  font-weight: bold;
+}
+
 @media (max-width: 840px) {
   .section-title p {
     font-size: 30px;
