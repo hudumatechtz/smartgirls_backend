@@ -1,17 +1,9 @@
-// const { json } = require("body-parser");
-const express = require("express");
-const router = express.Router({
-  mergeParams: true,
-});
-
 // /Import School model
 const School = require("../models/school.model");
 
 
 
-// Get all pages indexes
-router.get("/schools-admin"); 
-
+// Get all Schools 
 exports.getAdminSchools = async (req, res, next) => {
   const schools = await School.find();
   try {
@@ -25,14 +17,12 @@ exports.getAdminSchools = async (req, res, next) => {
 
 
 
-//GET add Page
-router.get("/schools-admin/add-school");
+//GET add School
 exports.getAddSchools = (req, res) => {
   res.render("add-school");
 };
 
 //POST add school
-router.post("/schools-admin/add-school");
 exports.postAddSchools = async (req, res, next) => {
   var name = req.body.name;
   var slug = name.replace(/\s+/g, "-").toLowerCase();
@@ -61,8 +51,7 @@ exports.postAddSchools = async (req, res, next) => {
     }
 };
 
-// GET edit page
-router.get("/schools-admin/edit-school/:id");
+// GET edit school
 exports.getEditSchools = async (req, res, next) => {
   const school = await School.findById(req.params.id);
 
@@ -77,7 +66,6 @@ exports.getEditSchools = async (req, res, next) => {
 };
 
 //POST Edit-school
-router.post("/schools-admin/edit-school/:id");
 exports.postEditSchools = async (req, res, next) => {
     var name = req.body.name;
     var slug = name.replace(/\s+/g, "-").toLowerCase();
@@ -114,7 +102,6 @@ exports.postEditSchools = async (req, res, next) => {
   };
 
 //  Get delete school
-router.get("/schools-admin/delete-school/:id");
 exports.getDeleteSchools = (req, res) => {
   School.findByIdAndRemove(req.params.id, async (err) => {
     if (err) return console.log(err);
@@ -131,5 +118,3 @@ exports.getDeleteSchools = (req, res) => {
     }
   });
 };
-
-module.exports = router;
