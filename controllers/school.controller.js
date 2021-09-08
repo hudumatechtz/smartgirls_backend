@@ -5,12 +5,10 @@ const School = require("../models/school.model");
 
 // Get all Schools 
 exports.getAdminSchools = async (req, res, next) => {
-   const message = "";
   const schools = await School.find();
   try {
     res.render("schools-admin", {
-      schools: schools,
-      message: message,
+      schools: schools
     });
   } catch (err) {
     next(err);
@@ -112,15 +110,8 @@ exports.getDeleteSchool = (req, res) => {
   School.findByIdAndRemove(req.params.id, async (err) => {
     if (err) return console.log(err);
 
-    const schools = await School.find();
-    try {
-      message = "School was deleted successfuly";
-      res.render("schools-admin", {
-        schools: schools,
-        message: message,
-      });
-    } catch (err) {
-      console.log(err);
-    }
+    
+      res.redirect("/schools-admin");
+    
   });
 };
