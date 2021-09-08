@@ -35,7 +35,7 @@ exports.postAddSchool = async (req, res, next) => {
       if (school) {
         console.log("School already exist");
         message = "School name exists, Choose another.";
-        res.redirect("back");
+        res.render("add-school", { message: message });
       } else {
         var sch = new School({
           name: name,
@@ -56,12 +56,14 @@ exports.postAddSchool = async (req, res, next) => {
 
 // GET edit school
 exports.getEditSchool = async (req, res, next) => {
+  const message = "";
   const school = await School.findById(req.params.id);
 
   try {
     res.render("edit-school", {
       name: school.name,
       id: school._id,
+      message: message
     });
   } catch (err) {
     next(err);
@@ -82,6 +84,7 @@ exports.postEditSchool = async (req, res, next) => {
         res.render("edit-school", {
           name: name,
           id: id,
+          message: message
         });
       } else {
         const sch = await School.findById(id);

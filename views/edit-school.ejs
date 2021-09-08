@@ -4,13 +4,13 @@
     <div class="container">
         <div class="add-article-form">
             <form name="form" method="POST"
-                action="/schools-admin/edit-article/<%= id %>"
+                action="/schools-admin/edit-school/<%= id %>"
                 enctype="multipart/form-data">
                 <legend style="text-align: center; font-size: 30px;">EDIT SCHOOL</legend>
                 <div class="form-group">
                     <label for="title">School name</label>
                     <input type="text" class="text-center form-control" id="title" placeholder="School name"
-                        name="name" value="name">
+                        name="name" value="<%= name %>">
                 </div>
 
                 <% if(message != ''){ %>
