@@ -13,8 +13,7 @@ const { check, validationResult } = require("express-validator");
 router.get("/", async (req, res) => {
   const schools = await School.find();
   try {
-    res.render("admin/schools", {
-      name: "Home | Admin | Categories",
+    res.render("schools-admin", {
       schools: schools,
     });
   } catch (err) {
@@ -24,74 +23,60 @@ router.get("/", async (req, res) => {
 
 //GET add Page
 router.get("/add-school", (req, res) => {
-  var cat_name = "";
+  var name = "";
 
   res.render("admin/add_school", {
     name: "Home | Admin | Add School",
-    cat_name: cat_name,
+    name: name,
   });
 });
 
 //POST add school
-router.post(
-  "/add-school",
-  [
-    check(
-      "cat_name",
-      "School name is required and must be more than 3 characters."
-    )
-      .not()
-      .isEmpty()
-      .isLength({
-        min: 3,
-      }),
-  ],
-  async (req, res) => {
-    var cat_name = req.body.cat_name;
-    var slug = cat_name.replace(/\s+/g, "-").toLowerCase();
+router.post("/add-school", async (req, res) => {
+  var name = req.body.name;
+  var slug = name.replace(/\s+/g, "-").toLowerCase();
 
-    var errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      console.log("ERRORS");
+  var errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    console.log("ERRORS");
 
-      res.render("admin/add_school", {
-        name: "Home | Admin | Add School",
-        errors: errors.array(),
-        cat_name: cat_name,
-      });
-    } else {
-      const school = await School.findOne({ slug: slug });
-      try {
-        if (school) {
-          console.log("School already exist");
-          req.flash("error", "School name exists, Choose another.");
-          res.redirect("back");
-        } else {
-          var cat = new School({
-            name: cat_name,
-            slug: slug,
-          });
-          cat.save(async (err) => {
-            if (err) return console.log(err);
+    res.render("admin/add_school", {
+      name: "Home | Admin | Add School",
+      errors: errors.array(),
+      name: name,
+    });
+  } else {
+    const school = await School.findOne({ slug: slug });
+    try {
+      if (school) {
+        console.log("School already exist");
+        req.flash("error", "School name exists, Choose another.");
+        res.redirect("back");
+      } else {
+        var cat = new School({
+          name: name,
+          slug: slug,
+        });
+        cat.save(async (err) => {
+          if (err) return console.log(err);
 
-            const schools = await School.find();
-            try {
-              req.app.locals.schools = schools;
-            } catch (err) {
-              console.log(err);
-            }
+          const schools = await School.find();
+          try {
+            req.app.locals.schools = schools;
+          } catch (err) {
+            console.log(err);
+          }
 
-            console.log("Add school success");
-            req.flash("success", "School added!");
-            res.redirect("/admin/schools");
-          });
-        }
-      } catch (err) {
-        console.log(err);
+          console.log("Add school success");
+          req.flash("success", "School added!");
+          res.redirect("/admin/schools");
+        });
       }
+    } catch (err) {
+      console.log(err);
     }
   }
-);
+});
 
 // GET edit page
 router.get("/edit-school/:id", async (req, res) => {
@@ -100,7 +85,7 @@ router.get("/edit-school/:id", async (req, res) => {
   try {
     res.render("admin/edit_school", {
       name: "Home | Admin | Edit School",
-      cat_name: school.name,
+      name: school.name,
       id: school._id,
     });
   } catch (err) {
@@ -112,10 +97,7 @@ router.get("/edit-school/:id", async (req, res) => {
 router.post(
   "/edit-school/:id",
   [
-    check(
-      "cat_name",
-      "School name is required and must be more than 3 characters."
-    )
+    check("name", "School name is required and must be more than 3 characters.")
       .not()
       .isEmpty()
       .isLength({
@@ -123,8 +105,8 @@ router.post(
       }),
   ],
   async (req, res) => {
-    var cat_name = req.body.cat_name;
-    var slug = cat_name.replace(/\s+/g, "-").toLowerCase();
+    var name = req.body.name;
+    var slug = name.replace(/\s+/g, "-").toLowerCase();
     var id = req.params.id;
 
     var errors = validationResult(req);
@@ -134,7 +116,7 @@ router.post(
       res.render("admin/edit_school", {
         name: "Home | Admin | Edit School",
         errors: errors.array(),
-        cat_name: cat_name,
+        name: name,
         id: id,
       });
     } else {
@@ -150,13 +132,13 @@ router.post(
           req.flash("error", "School slug exists, Choose another.");
           res.render("admin/edit_school", {
             name: "Home | Admin | Edit School",
-            cat_name: cat_name,
+            name: name,
             id: id,
           });
         } else {
           const cat = await School.findById(id);
           try {
-            cat.name = cat_name;
+            cat.name = name;
             cat.slug = slug;
             cat.save(async (err) => {
               if (err) return console.log(err);
