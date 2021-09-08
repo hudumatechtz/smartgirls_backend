@@ -10,72 +10,50 @@ const School = require("../models/school.model");
 const { check, validationResult } = require("express-validator");
 
 // Get all pages indexes
-router.get("/", async (req, res) => {
+router.get("/", async (req, res, next) => {
   const schools = await School.find();
   try {
     res.render("schools-admin", {
       schools: schools,
     });
   } catch (err) {
-    console.log(err);
+    next(err);
   }
 });
 
 //GET add Page
 router.get("/add-school", (req, res) => {
-  var name = "";
-
-  res.render("admin/add_school", {
-    name: "Home | Admin | Add School",
-    name: name,
-  });
+  res.render("add-school");
 });
 
 //POST add school
-router.post("/add-school", async (req, res) => {
+router.post("/add-school", async (req, res, next) => {
   var name = req.body.name;
   var slug = name.replace(/\s+/g, "-").toLowerCase();
 
-  var errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    console.log("ERRORS");
-
-    res.render("admin/add_school", {
-      name: "Home | Admin | Add School",
-      errors: errors.array(),
-      name: name,
-    });
-  } else {
     const school = await School.findOne({ slug: slug });
     try {
       if (school) {
         console.log("School already exist");
-        req.flash("error", "School name exists, Choose another.");
+        message = "School name exists, Choose another.";
         res.redirect("back");
       } else {
-        var cat = new School({
+        var sch = new School({
           name: name,
           slug: slug,
         });
-        cat.save(async (err) => {
+        sch.save(async (err) => {
           if (err) return console.log(err);
 
-          const schools = await School.find();
-          try {
-            req.app.locals.schools = schools;
-          } catch (err) {
-            console.log(err);
-          }
-
           console.log("Add school success");
-          req.flash("success", "School added!");
-          res.redirect("/admin/schools");
+          message = "School was posted successfuly, To view go to schools";
+          res.redirect("add-school");
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
-  }
+ 
 });
 
 // GET edit page
@@ -83,13 +61,12 @@ router.get("/edit-school/:id", async (req, res) => {
   const school = await School.findById(req.params.id);
 
   try {
-    res.render("admin/edit_school", {
-      name: "Home | Admin | Edit School",
+    res.render("add-school", {
       name: school.name,
       id: school._id,
     });
   } catch (err) {
-    console.log(err);
+    next(err);
   }
 });
 
