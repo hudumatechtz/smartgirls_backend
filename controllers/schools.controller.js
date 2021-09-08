@@ -4,13 +4,15 @@ const router = express.Router({
   mergeParams: true,
 });
 
-// /Import Page model
+// /Import School model
 const School = require("../models/school.model");
 
-const { check, validationResult } = require("express-validator");
+
 
 // Get all pages indexes
-router.get("/", async (req, res, next) => {
+router.get("/schools-admin"); 
+
+exports.getAdminSchools = async (req, res, next) => {
   const schools = await School.find();
   try {
     res.render("schools-admin", {
@@ -19,15 +21,19 @@ router.get("/", async (req, res, next) => {
   } catch (err) {
     next(err);
   }
-});
+};
+
+
 
 //GET add Page
-router.get("/add-school", (req, res) => {
+router.get("/schools-admin/add-school");
+exports.getAddSchools = (req, res) => {
   res.render("add-school");
-});
+};
 
 //POST add school
-router.post("/add-school", async (req, res, next) => {
+router.post("/schools-admin/add-school");
+exports.postAddSchools = async (req, res, next) => {
   var name = req.body.name;
   var slug = name.replace(/\s+/g, "-").toLowerCase();
 
@@ -53,11 +59,11 @@ router.post("/add-school", async (req, res, next) => {
     } catch (err) {
       next(err);
     }
- 
-});
+};
 
 // GET edit page
-router.get("/edit-school/:id", async (req, res, next) => {
+router.get("/schools-admin/edit-school/:id");
+exports.getEditSchools = async (req, res, next) => {
   const school = await School.findById(req.params.id);
 
   try {
@@ -68,7 +74,7 @@ router.get("/edit-school/:id", async (req, res, next) => {
   } catch (err) {
     next(err);
   }
-});
+};
 
 //POST Edit-school
 router.post(
