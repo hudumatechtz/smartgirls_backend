@@ -11,11 +11,11 @@ const { check, validationResult } = require("express-validator");
 
 // Get all pages indexes
 router.get("/", async (req, res) => {
-  const categories = await School.find();
+  const schools = await School.find();
   try {
-    res.render("admin/categories", {
-      title: "Home | Admin | Categories",
-      categories: categories,
+    res.render("admin/schools", {
+      name: "Home | Admin | Categories",
+      schools: schools,
     });
   } catch (err) {
     console.log(err);
@@ -23,21 +23,21 @@ router.get("/", async (req, res) => {
 });
 
 //GET add Page
-router.get("/add-category", (req, res) => {
-  var cat_title = "";
+router.get("/add-school", (req, res) => {
+  var cat_name = "";
 
-  res.render("admin/add_category", {
-    title: "Home | Admin | Add School",
-    cat_title: cat_title,
+  res.render("admin/add_school", {
+    name: "Home | Admin | Add School",
+    cat_name: cat_name,
   });
 });
 
-//POST add category
+//POST add school
 router.post(
-  "/add-category",
+  "/add-school",
   [
     check(
-      "cat_title",
+      "cat_name",
       "School name is required and must be more than 3 characters."
     )
       .not()
@@ -47,43 +47,43 @@ router.post(
       }),
   ],
   async (req, res) => {
-    var cat_title = req.body.cat_title;
-    var slug = cat_title.replace(/\s+/g, "-").toLowerCase();
+    var cat_name = req.body.cat_name;
+    var slug = cat_name.replace(/\s+/g, "-").toLowerCase();
 
     var errors = validationResult(req);
     if (!errors.isEmpty()) {
       console.log("ERRORS");
 
-      res.render("admin/add_category", {
-        title: "Home | Admin | Add School",
+      res.render("admin/add_school", {
+        name: "Home | Admin | Add School",
         errors: errors.array(),
-        cat_title: cat_title,
+        cat_name: cat_name,
       });
     } else {
-      const category = await School.findOne({ slug: slug });
+      const school = await School.findOne({ slug: slug });
       try {
-        if (category) {
+        if (school) {
           console.log("School already exist");
-          req.flash("error", "School title exists, Choose another.");
+          req.flash("error", "School name exists, Choose another.");
           res.redirect("back");
         } else {
           var cat = new School({
-            title: cat_title,
+            name: cat_name,
             slug: slug,
           });
           cat.save(async (err) => {
             if (err) return console.log(err);
 
-            const categories = await School.find();
+            const schools = await School.find();
             try {
-              req.app.locals.categories = categories;
+              req.app.locals.schools = schools;
             } catch (err) {
               console.log(err);
             }
 
-            console.log("Add category success");
+            console.log("Add school success");
             req.flash("success", "School added!");
-            res.redirect("/admin/categories");
+            res.redirect("/admin/schools");
           });
         }
       } catch (err) {
@@ -94,26 +94,26 @@ router.post(
 );
 
 // GET edit page
-router.get("/edit-category/:id", async (req, res) => {
-  const category = await School.findById(req.params.id);
+router.get("/edit-school/:id", async (req, res) => {
+  const school = await School.findById(req.params.id);
 
   try {
-    res.render("admin/edit_category", {
-      title: "Home | Admin | Edit School",
-      cat_title: category.title,
-      id: category._id,
+    res.render("admin/edit_school", {
+      name: "Home | Admin | Edit School",
+      cat_name: school.name,
+      id: school._id,
     });
   } catch (err) {
     console.log(err);
   }
 });
 
-//POST Edit-category
+//POST Edit-school
 router.post(
-  "/edit-category/:id",
+  "/edit-school/:id",
   [
     check(
-      "cat_title",
+      "cat_name",
       "School name is required and must be more than 3 characters."
     )
       .not()
@@ -123,54 +123,54 @@ router.post(
       }),
   ],
   async (req, res) => {
-    var cat_title = req.body.cat_title;
-    var slug = cat_title.replace(/\s+/g, "-").toLowerCase();
+    var cat_name = req.body.cat_name;
+    var slug = cat_name.replace(/\s+/g, "-").toLowerCase();
     var id = req.params.id;
 
     var errors = validationResult(req);
     if (!errors.isEmpty()) {
       console.log("ERRORS");
 
-      res.render("admin/edit_category", {
-        title: "Home | Admin | Edit School",
+      res.render("admin/edit_school", {
+        name: "Home | Admin | Edit School",
         errors: errors.array(),
-        cat_title: cat_title,
+        cat_name: cat_name,
         id: id,
       });
     } else {
-      const category = await School.findOne({
+      const school = await School.findOne({
         slug: slug,
         _id: {
           $ne: id,
         },
       });
       try {
-        if (category) {
+        if (school) {
           console.log("School already exist");
           req.flash("error", "School slug exists, Choose another.");
-          res.render("admin/edit_category", {
-            title: "Home | Admin | Edit School",
-            cat_title: cat_title,
+          res.render("admin/edit_school", {
+            name: "Home | Admin | Edit School",
+            cat_name: cat_name,
             id: id,
           });
         } else {
           const cat = await School.findById(id);
           try {
-            cat.title = cat_title;
+            cat.name = cat_name;
             cat.slug = slug;
             cat.save(async (err) => {
               if (err) return console.log(err);
 
-              const categories = await School.find();
+              const schools = await School.find();
               try {
-                req.app.locals.categories = categories;
+                req.app.locals.schools = schools;
               } catch (err) {
                 console.log(err);
               }
 
               console.log("School Edited success");
               req.flash("success", "School edited!");
-              res.redirect("/admin/categories");
+              res.redirect("/admin/schools");
             });
           } catch (err) {
             console.log(err);
@@ -183,21 +183,21 @@ router.post(
   }
 );
 
-//  Get delete category
-router.get("/delete-category/:id", (req, res) => {
+//  Get delete school
+router.get("/delete-school/:id", (req, res) => {
   School.findByIdAndRemove(req.params.id, async (err) => {
     if (err) return console.log(err);
 
-    const categories = await School.find();
+    const schools = await School.find();
     try {
-      req.app.locals.categories = categories;
+      req.app.locals.schools = schools;
     } catch (err) {
       console.log(err);
     }
 
     console.log("Delete School success");
     req.flash("success", "School Deleted!");
-    res.redirect("/admin/categories");
+    res.redirect("/admin/schools");
   });
 });
 
