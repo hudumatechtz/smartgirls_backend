@@ -1,5 +1,54 @@
 <%- include("includes/admin-header") -%>
 <!-- CONTENTS -->
 <h2>View to list all registered schools, button to the form to add new school</h2>
+<div id="services " class="services" style="overflow: hidden">
+    <div class="container" data-aos="fade-up">
+        <div class="d-flex row">
+            <div class="mt-2 section-title col-6">
+                <!-- <h2>Articles</h2> -->
+                <p>our Articles</p>
+            </div>
+            <div class="mt-2 text-right col-6" style="padding-left: 0; padding-right: 0">
+                <a href="/schools-admin/add-school">
+                    <button type="button" id="add-article-button" class="ui primary labeled icon button"
+                        style="background: var(--main-color) !important; border: 1px solid var(--main-color) !important; margin-right: 0">
+                        <i class="plus icon"></i>
+                        Add School
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <div class="about" data-aos="fade-up">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>School</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+
+                    </thead>
+                    <tbody class="align-middle">
+                        <% schools.forEach((school) => { %>
+                        <tr>
+                            <td><%= school.title %></td>
+                            <td><a href="/schools-admin/edit-school/<%= school._id %>">Edit</a></td>
+                            <td><a class="confirmDeletion"
+                                    href="/schools-admin/delete-school/<%= school._id %>"><i
+                                        class="fa fa-trash"></i></a></td>
+                        </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            
+
 <%- include("includes/admin-footer") -%>
     
