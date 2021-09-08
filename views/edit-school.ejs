@@ -3,8 +3,10 @@
 <div class="add-article">
     <div class="container">
         <div class="add-article-form">
-            <form name="form" method="POST" action="/schools-admin/add-school" enctype="multipart/form-data">
-                <legend style="text-align: center; font-size: 30px;">ADD NEW SCHOOL</legend>
+            <form name="form" method="POST"
+                action="/schools-admin/edit-article/<%= id %>"
+                enctype="multipart/form-data">
+                <legend style="text-align: center; font-size: 30px;">EDIT SCHOOL</legend>
                 <div class="form-group">
                     <label for="title">School name</label>
                     <input type="text" class="text-center form-control" id="title" placeholder="School name"
