@@ -77,60 +77,59 @@ exports.getEditSchools = async (req, res, next) => {
 };
 
 //POST Edit-school
-router.post(
-  "/edit-school/:id",
-  async (req, res, next) => {
+router.post("/schools-admin/edit-school/:id");
+exports.postEditSchools = async (req, res, next) => {
     var name = req.body.name;
     var slug = name.replace(/\s+/g, "-").toLowerCase();
     var id = req.params.id;
 
-    const school = await School.findOne({slug: slug,_id: {$ne: id,}});
-      try {
-        if (school) {
-          console.log("School already exist");
-          message = "School name exists, Choose another.";
-          res.render("edit-school", {
-            name: name,
-            id: id,
-          });
-        } else {
-          const sch = await School.findById(id);
-          try {
-            sch.name = name;
-            sch.slug = slug;
-            sch.save(async (err) => {
-              if (err) return console.log(err);
+    const school = await School.findOne({ slug: slug, _id: { $ne: id } });
+    try {
+      if (school) {
+        console.log("School already exist");
+        message = "School name exists, Choose another.";
+        res.render("edit-school", {
+          name: name,
+          id: id,
+        });
+      } else {
+        const sch = await School.findById(id);
+        try {
+          sch.name = name;
+          sch.slug = slug;
+          sch.save(async (err) => {
+            if (err) return console.log(err);
 
-              console.log("School Edited success");
-              message = "School was edited successfuly, To view go to schools";
-              res.redirect("back");
-            });
-          } catch (err) {
-            next(err);
-          }
+            console.log("School Edited success");
+            message = "School was edited successfuly, To view go to schools";
+            res.redirect("back");
+          });
+        } catch (err) {
+          next(err);
         }
-      } catch (err) {
-        next(err);
       }
-  }
-);
+    } catch (err) {
+      next(err);
+    }
+  };
 
 //  Get delete school
-router.get("/delete-school/:id", (req, res) => {
+router.get("/schools-admin/delete-school/:id");
+exports.getDeleteSchools = (req, res) => {
   School.findByIdAndRemove(req.params.id, async (err) => {
     if (err) return console.log(err);
 
     const schools = await School.find();
     try {
-        message = "School was deleted successfuly";
-        res.render("schools-admin", {
-          schools: schools,
-          message: message
-        });
+      message = "School was deleted successfuly";
+      res.render("schools-admin", {
+        schools: schools,
+        message: message,
+      });
     } catch (err) {
       console.log(err);
     }
   });
-});
+};
 
 module.exports = router;
