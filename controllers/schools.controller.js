@@ -116,14 +116,14 @@ router.get("/delete-school/:id", (req, res) => {
 
     const schools = await School.find();
     try {
-      req.app.locals.schools = schools;
+        message = "School was deleted successfuly";
+        res.render("schools-admin", {
+          schools: schools,
+          message: message
+        });
     } catch (err) {
       console.log(err);
     }
-
-    console.log("Delete School success");
-    req.flash("success", "School Deleted!");
-    res.redirect("/admin/schools");
   });
 });
 
