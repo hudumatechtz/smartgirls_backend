@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 3000;
 const articleRoute = require("./routes/article.route");
 const pagesRoute = require("./routes/smartgirls.route");
 const authroute = require("./routes/auth.route");
+const schoolRoute = require("./routes/school.route");
 const multer = require("multer");
 const cookie = require("cookie-parser");
 const blocker = require("./middlewares/blocker");
@@ -30,7 +31,7 @@ app.use((req, res, next) => {
    next();
 });
 
-//app.use(blocker);
+//app.use(blocker); 
 const fileFilter = (req, file, cb) => {
   if (
     file.mimetype === "image/jpeg" ||
@@ -94,6 +95,7 @@ app.use(
   multer({ storage: fileStorage, fileFilter: fileFilter }).single("image")
 );
 //ROUTES
+app.use(schoolRoute);
 app.use(articleRoute);
 app.use(pagesRoute);
 app.use("/account", authroute);

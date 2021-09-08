@@ -18,12 +18,12 @@ exports.getAdminSchools = async (req, res, next) => {
 
 
 //GET add School
-exports.getAddSchools = (req, res) => {
+exports.getAddSchool = (req, res) => {
   res.render("add-school");
 };
 
 //POST add school
-exports.postAddSchools = async (req, res, next) => {
+exports.postAddSchool = async (req, res, next) => {
   var name = req.body.name;
   var slug = name.replace(/\s+/g, "-").toLowerCase();
 
@@ -52,7 +52,7 @@ exports.postAddSchools = async (req, res, next) => {
 };
 
 // GET edit school
-exports.getEditSchools = async (req, res, next) => {
+exports.getEditSchool = async (req, res, next) => {
   const school = await School.findById(req.params.id);
 
   try {
@@ -66,7 +66,7 @@ exports.getEditSchools = async (req, res, next) => {
 };
 
 //POST Edit-school
-exports.postEditSchools = async (req, res, next) => {
+exports.postEditSchool = async (req, res, next) => {
     var name = req.body.name;
     var slug = name.replace(/\s+/g, "-").toLowerCase();
     var id = req.params.id;
@@ -102,7 +102,7 @@ exports.postEditSchools = async (req, res, next) => {
   };
 
 //  Get delete school
-exports.getDeleteSchools = (req, res) => {
+exports.getDeleteSchool = (req, res) => {
   School.findByIdAndRemove(req.params.id, async (err) => {
     if (err) return console.log(err);
 
