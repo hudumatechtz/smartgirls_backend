@@ -5,10 +5,12 @@ const School = require("../models/school.model");
 
 // Get all Schools 
 exports.getAdminSchools = async (req, res, next) => {
+   const message = "";
   const schools = await School.find();
   try {
     res.render("schools-admin", {
       schools: schools,
+      message: message,
     });
   } catch (err) {
     next(err);
@@ -19,7 +21,8 @@ exports.getAdminSchools = async (req, res, next) => {
 
 //GET add School
 exports.getAddSchool = (req, res) => {
-  res.render("add-school");
+  const message = "";
+  res.render("add-school", { message: message });
 };
 
 //POST add school
@@ -43,7 +46,7 @@ exports.postAddSchool = async (req, res, next) => {
 
           console.log("Add school success");
           message = "School was posted successfuly, To view go to schools";
-          res.redirect("back");
+          res.render("add-school", { message: message });
         });
       }
     } catch (err) {
@@ -90,7 +93,7 @@ exports.postEditSchool = async (req, res, next) => {
 
             console.log("School Edited success");
             message = "School was edited successfuly, To view go to schools";
-            res.redirect("back");
+            res.render("edit-school", { name: name, id: id, message: message });
           });
         } catch (err) {
           next(err);
