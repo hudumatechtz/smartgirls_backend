@@ -47,7 +47,7 @@ router.post("/add-school", async (req, res, next) => {
 
           console.log("Add school success");
           message = "School was posted successfuly, To view go to schools";
-          res.redirect("add-school");
+          res.redirect("back");
         });
       }
     } catch (err) {
@@ -57,11 +57,11 @@ router.post("/add-school", async (req, res, next) => {
 });
 
 // GET edit page
-router.get("/edit-school/:id", async (req, res) => {
+router.get("/edit-school/:id", async (req, res, next) => {
   const school = await School.findById(req.params.id);
 
   try {
-    res.render("add-school", {
+    res.render("edit-school", {
       name: school.name,
       id: school._id,
     });
@@ -73,72 +73,39 @@ router.get("/edit-school/:id", async (req, res) => {
 //POST Edit-school
 router.post(
   "/edit-school/:id",
-  [
-    check("name", "School name is required and must be more than 3 characters.")
-      .not()
-      .isEmpty()
-      .isLength({
-        min: 3,
-      }),
-  ],
-  async (req, res) => {
+  async (req, res, next) => {
     var name = req.body.name;
     var slug = name.replace(/\s+/g, "-").toLowerCase();
     var id = req.params.id;
 
-    var errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      console.log("ERRORS");
-
-      res.render("admin/edit_school", {
-        name: "Home | Admin | Edit School",
-        errors: errors.array(),
-        name: name,
-        id: id,
-      });
-    } else {
-      const school = await School.findOne({
-        slug: slug,
-        _id: {
-          $ne: id,
-        },
-      });
+    const school = await School.findOne({slug: slug,_id: {$ne: id,}});
       try {
         if (school) {
           console.log("School already exist");
-          req.flash("error", "School slug exists, Choose another.");
-          res.render("admin/edit_school", {
-            name: "Home | Admin | Edit School",
+          message = "School name exists, Choose another.";
+          res.render("edit-school", {
             name: name,
             id: id,
           });
         } else {
-          const cat = await School.findById(id);
+          const sch = await School.findById(id);
           try {
-            cat.name = name;
-            cat.slug = slug;
-            cat.save(async (err) => {
+            sch.name = name;
+            sch.slug = slug;
+            sch.save(async (err) => {
               if (err) return console.log(err);
 
-              const schools = await School.find();
-              try {
-                req.app.locals.schools = schools;
-              } catch (err) {
-                console.log(err);
-              }
-
               console.log("School Edited success");
-              req.flash("success", "School edited!");
-              res.redirect("/admin/schools");
+              message = "School was edited successfuly, To view go to schools";
+              res.redirect("back");
             });
           } catch (err) {
-            console.log(err);
+            next(err);
           }
         }
       } catch (err) {
-        console.log(err);
+        next(err);
       }
-    }
   }
 );
 
