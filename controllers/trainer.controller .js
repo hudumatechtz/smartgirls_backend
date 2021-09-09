@@ -35,11 +35,11 @@ exports.postAddTrainer = async (req, res, next) => {
         message = "Trainer name exists, Choose another.";
         res.render("add-trainer", { message: message });
       } else {
-        var sch = new Trainer({
+        var tre = new Trainer({
           name: name,
           slug: slug,
         });
-        sch.save(async (err) => {
+        tre.save(async (err) => {
           if (err) return console.log(err);
 
           console.log("Add trainer success");
@@ -85,11 +85,11 @@ exports.postEditTrainer = async (req, res, next) => {
           message: message
         });
       } else {
-        const sch = await Trainer.findById(id);
+        const tre = await Trainer.findById(id);
         try {
-          sch.name = name;
-          sch.slug = slug;
-          sch.save(async (err) => {
+          tre.name = name;
+          tre.slug = slug;
+          tre.save(async (err) => {
             if (err) return console.log(err);
 
             console.log("Trainer Edited success");

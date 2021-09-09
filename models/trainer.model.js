@@ -19,6 +19,7 @@ const trainerSchema = new Schema({
     type: String,
     required: true,
   },
+  slug: String
 });
 
 module.exports = mongoose.model("Trainer", trainerSchema);
