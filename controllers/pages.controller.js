@@ -27,9 +27,3 @@ exports.getGallery = (req, res, next) => {
 exports.getDashboard = (req, res, next) => {
   res.render("dashboard");
 };
-exports.getTrainers = (req, res, next) => {
-  res.render("trainers-admin");
-};
-exports.getCoachers = (req, res, next) => {
-  res.render("coachers-admin");
-};
