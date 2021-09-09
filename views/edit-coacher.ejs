@@ -4,10 +4,10 @@
     <div class="container">
         <div class="add-article-form">
             <form name="form" method="POST" action="/schools-admin/edit-school/<%= id %>" enctype="multipart/form-data">
-                <legend style="text-align: center; font-size: 30px;">EDIT TRAINER</legend>
+                <legend style="text-align: center; font-size: 30px;">EDIT COACHER</legend>
 
                 <div class="form-group">
-                    <label for="title">Trainer Fullname</label>
+                    <label for="title">Coacher Fullname</label>
                     <input type="text" class="text-center form-control" id="title" placeholder="Trainer name"
                         name="name" value="<%= name %>">
                 </div>
@@ -40,7 +40,7 @@
                 </div>
                 <% } %>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary" id="login-button">Save trainer</button>
+                    <button type="submit" class="btn btn-primary" id="login-button">Save coacher</button>
                 </div>
                 <!-- <div class="not-spin">
         <div class="spinner-border" role="status">
