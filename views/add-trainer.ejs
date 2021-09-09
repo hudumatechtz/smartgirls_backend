@@ -3,22 +3,22 @@
 <div class="add-article">
     <div class="container">
         <div class="add-article-form">
-            <form name="form" method="POST" action="/schools-admin/add-school" enctype="multipart/form-data">
+            <form name="form" method="POST" action="/trainers-admin/add-trainer" enctype="multipart/form-data">
                 <legend style="text-align: center; font-size: 30px;">ADD NEW TRAINER</legend>
                 <div class="form-group">
                     <label for="title">Trainer Fullname</label>
                     <input type="text" class="text-center form-control" id="title" placeholder="Trainer name"
-                        name="name">
+                        name="name" required>
                 </div>
                 <div class="form-group">
                     <label for="title">Phone</label>
-                    <input type="number" class="text-center form-control" id="title" placeholder="Phone"
-                        name="phone">
+                    <input type="tel" class="text-center form-control" id="title" placeholder="Phone"
+                        name="phone" required>
                 </div>
                 <div class="form-group">
                     <label for="title">Email</label>
                     <input type="email" class="text-center form-control" id="title" placeholder="Email"
-                        name="email">
+                        name="email" required>
                 </div>
                  <div class="form-group">
                      <label for="">School Assigned</label>

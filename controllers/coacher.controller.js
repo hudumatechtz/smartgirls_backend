@@ -1,6 +1,9 @@
 // /Import Coacher model
 const Coacher = require("../models/coacher.model");
 
+// /Import School model
+const School = require("../models/school.model");
+
 
 
 // Get all Coachers 
