@@ -9,6 +9,8 @@ require("dotenv").config();
 const MONGO_URI = process.env.MONGO_URI;
 const PORT = process.env.PORT || 3000;
 const articleRoute = require("./routes/article.route");
+const trainerRoute = require("./routes/trainer.route");
+const coacherRoute = require("./routes/coacher.route");
 const pagesRoute = require("./routes/smartgirls.route");
 const authroute = require("./routes/auth.route");
 const schoolRoute = require("./routes/school.route");
@@ -95,6 +97,8 @@ app.use(
   multer({ storage: fileStorage, fileFilter: fileFilter }).single("image")
 );
 //ROUTES
+app.use(trainerRoute);
+app.use(coacherRoute);
 app.use(schoolRoute);
 app.use(articleRoute);
 app.use(pagesRoute);
