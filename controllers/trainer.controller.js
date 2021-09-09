@@ -68,13 +68,18 @@ exports.postAddTrainer = async (req, res, next) => {
 // GET edit trainer
 exports.getEditTrainer = async (req, res, next) => {
   const message = "";
+  const schools = await School.find();
   const trainer = await Trainer.findById(req.params.id);
 
   try {
     res.render("edit-trainer", {
       name: trainer.name,
-      id: trainer._id,
+      email: trainer.email,
+      phone: trainer.phone,
+      sch: trainer.school.replace(/\s+/g, "-").toLowerCase(),
+      schools: schools,
       message: message,
+      id: trainer._id,
     });
   } catch (err) {
     next(err);
@@ -85,8 +90,12 @@ exports.getEditTrainer = async (req, res, next) => {
 exports.postEditTrainer = async (req, res, next) => {
   var name = req.body.name;
   var slug = name.replace(/\s+/g, "-").toLowerCase();
+  var phone = req.body.phone;
+  var email = req.body.email;
+  var school = req.body.school;
   var id = req.params.id;
 
+  const schools = await School.find();
   const trainer = await Trainer.findOne({ slug: slug, _id: { $ne: id } });
   try {
     if (trainer) {
@@ -94,6 +103,10 @@ exports.postEditTrainer = async (req, res, next) => {
       message = "Trainer name exists, Choose another.";
       res.render("edit-trainer", {
         name: name,
+        email: email,
+        phone: phone,
+        sch: school.replace(/\s+/g, "-").toLowerCase(),
+        schools: schools,
         id: id,
         message: message,
       });
@@ -101,13 +114,24 @@ exports.postEditTrainer = async (req, res, next) => {
       const tre = await Trainer.findById(id);
       try {
         tre.name = name;
+        tre.email = email;
+        tre.phone = phone;
+        tre.school = school;
         tre.slug = slug;
         tre.save(async (err) => {
           if (err) return console.log(err);
 
           console.log("Trainer Edited success");
           message = "Trainer was edited successfuly, To view go to trainers";
-          res.render("edit-trainer", { name: name, id: id, message: message });
+          res.render("edit-trainer", {
+            name: name,
+            email: email,
+            phone: phone,
+            sch: school.replace(/\s+/g, "-").toLowerCase(),
+            schools: schools,
+            id: id,
+            message: message,
+          });
         });
       } catch (err) {
         next(err);

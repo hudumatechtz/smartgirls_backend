@@ -27,7 +27,7 @@
                     <label for="">School Assigned</label>
                     <select class="form-control" name="school" placeholder="School">
                         <% schools.forEach((school) => { %>
-                        <option value="<%= school.slug %>" <% if (school.slug == school) { %> selected="selected"
+                        <option value="<%= school.name %>" <% if (school.slug == sch) { %> selected="selected"
                             <% } %>><%= school.name %></option>
                         <% }); %>
                     </select>
