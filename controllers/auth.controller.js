@@ -85,6 +85,6 @@ exports.getDeleteUser = (req, res) => {
   User.findByIdAndRemove(req.params.id, async (err) => {
     if (err) return console.log(err);
 
-    res.redirect("/admins-admin");
+    res.redirect("/account/admins-admin");
   });
 };
