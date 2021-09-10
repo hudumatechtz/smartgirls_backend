@@ -1,5 +1,20 @@
 const User = require("../models/user.model");
 const bcyrpt = require("bcrypt");
+
+
+// Get all Coachers
+exports.getAdmins = async (req, res, next) => {
+  const users = await User.find();
+
+  try {
+    res.render("admins-admin", {
+      admins: users,
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
 exports.getLogin = async (req, res, next) => {
   res.render("login");
 };
@@ -37,7 +52,7 @@ exports.postRegister = async (req, res, next) => {
   try {
     const user = await User.findOne({ username: username });
     if (user) {
-      return res.render("add-admin", mess);
+      return res.render("add-admin", { message: "Admin Username exists"});
     }
     const hashedPassword = await bcyrpt.hash(password, 12);
     const newUser = new User({
@@ -46,10 +61,14 @@ exports.postRegister = async (req, res, next) => {
     });
     const savedUser = await newUser.save();
     if (!savedUser) {
-      return res.json({ message: "User could not be saved" });
+      return res.render("add-admin", { message: "Admin could not be saved" });
+      // return res.json({ message: "User could not be saved" });
     }
     // res.redirect("/account/login");
-    res.json({ user: savedUser });
+    // res.json({ user: savedUser });
+    res.render("add-admin", {
+      message: "Admin added successfuly, To view go to Admins",
+    });
   } catch (error) {
     next(error);
   }
