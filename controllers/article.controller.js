@@ -39,6 +39,7 @@ exports.getAddArticle = (req, res, next) => {
   res.render("add-article", { message: "" });
 };
 exports.getAdminArticles = async (req, res, next) => {
+  const deleteArticle = await Article.deleteMany({});
   try {
     const articles = await Article.find({});
     res.render("articles-admin", { articles: articles }); 
