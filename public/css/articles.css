@@ -37,7 +37,7 @@ a.article-title:hover {
 }
 
 .extra-article-content a:hover {
-  color: ;
+  color: var(--main-color);
 }
 
 .article-img {
