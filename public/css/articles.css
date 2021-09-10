@@ -32,6 +32,13 @@ a.article-title:hover {
   font-size: 1.2em;
 }
 
+.extra-article-content a {
+  color: #428bca;
+}
+
+.extra-article-content a:hover {
+  color: ;
+}
 
 .article-img {
   height: 400px;

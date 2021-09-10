@@ -1,6 +1,6 @@
 const Article = require("../models/article.model");
 exports.postArticle = async (req, res, next) => {
-  const { title, description } = req.body;
+  const { title, description, link } = req.body;
   let message = "";
   try {
     if (!req.file) {
@@ -15,6 +15,7 @@ exports.postArticle = async (req, res, next) => {
       description: description,
       imageUrl: imageUrl,
       creator: creator,
+      link: link
     });
     const savedArticle = await newArticle.save();
     if (!savedArticle) {

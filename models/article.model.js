@@ -7,6 +7,7 @@ const articleSchema = new Schema({
     imageUrl: String,
     description: String,
     creator: String,
+    link:String
 }, {timestamps: true});
 
 module.exports = mongoose.model("article", articleSchema);
