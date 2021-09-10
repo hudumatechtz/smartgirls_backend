@@ -29,12 +29,15 @@ exports.postLogin = async (req, res, next) => {
   }
 };
 
+exports.getRegister = async (req, res, next) => {
+  res.render("add-admin", { message: ""});
+};
 exports.postRegister = async (req, res, next) => {
   const { username, password } = req.body;
   try {
     const user = await User.findOne({ username: username });
     if (user) {
-      return res.redirect("/account/login");
+      return res.render("add-admin", mess);
     }
     const hashedPassword = await bcyrpt.hash(password, 12);
     const newUser = new User({
