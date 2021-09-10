@@ -12,4 +12,6 @@ router.post("/register", auth.postRegister);
 router.post("/login", auth.postLogin);
 
 router.get("/logout", auth.getLogout);
+
+router.get("/delete-admin/:id", auth.getDeleteUser);
 module.exports = router;
