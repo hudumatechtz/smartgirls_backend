@@ -29,11 +29,11 @@ const store = new mongoDbStore(
 const moment = require("moment");
 
 app.use((req, res, next) => {
-   res.locals.moment = moment;
-   next();
+  res.locals.moment = moment;
+  next();
 });
 
-//app.use(blocker); 
+//app.use(blocker);
 const fileFilter = (req, file, cb) => {
   if (
     file.mimetype === "image/jpeg" ||
@@ -55,7 +55,7 @@ const fileStorage = multer.diskStorage({
       null,
       new Date().toISOString().split(":").join("").split("-").join("") +
         "-" +
-        "smart_girl" +
+        "smartgirlz" +
         Math.floor(1000 + Math.random() * 9000) +
         file.originalname.substring(file.originalname.indexOf("."))
     );
