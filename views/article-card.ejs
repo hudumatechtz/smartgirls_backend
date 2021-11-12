@@ -5,18 +5,20 @@
     <div class="col-lg-6 pt-2 pl-3 pr-3 pt-lg-0 order-2 order-lg-1 content media-body text-justify"
         data-aos="fade-right" data-aos-delay="100">
         <div class="article-metadata d-flex mt-2">
-            <a class="col-6" href="" style="padding: 0; text-align: left"><%= article.creator %></a>
-            <p class="col-6 text-muted text-right" style="padding: 0;">
+            <!-- <a class="col-6" href="" style="padding: 0; text-align: left"><%= article.creator %></a> -->
+            <p class="col-6 text-muted text-left" style="padding: 0;">
                 <%= moment(article.createdAt).format('Do MMMM, YYYY')%></p>
         </div>
         <h3><a class="article-title" href=""><%= article.title %></a>
         </h3>
-        <p class="article-content"><%= article.description %></p>
+        
+        <p id="articleContent" class="article-content"><%- article.description %></p>
 
         <% if( article.link != '') { %>
-              <ul style="padding: 0;">
-            <li style="list-style-type: none !important;" class="extra-article-content"><i
-                    class="ri-check-double-line"></i> <a target="_blank" href="<%= article.link %>" >Go to output link</a>
+            <ul style="padding: 0;">
+            <li style="list-style-type: none !important;" class="extra-article-content">
+                <i class="ri-check-double-line"></i> 
+                <a target="_blank" rel="noopener nofollower norefer" href="<%= article.link %>" >Go to output link</a>
             </li>
         </ul>
         <% } %>

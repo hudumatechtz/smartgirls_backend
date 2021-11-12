@@ -3,7 +3,7 @@
   --black-color: #0864af;
   --white-color: #ffffff;
   --grey-color: #e9ecef;
-  --other-color: #2f2fa2;
+  --other-color: #f5f500;
   --product-gap: 10px;
 }
 html,
@@ -45,6 +45,9 @@ h2 {
   margin-bottom: 30px;
 }
 .active-header-link {
+  background-color: var(--other-color);
+  border-radius: 4px;
+  padding: 8px 12px;
   color: var(--main-color) !important;
 }
 a.active-header-link:after {
