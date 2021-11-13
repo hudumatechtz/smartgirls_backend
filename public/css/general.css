@@ -108,11 +108,11 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.5s;
   z-index: 997;
   padding: 15px 0;
-  background: rgba(8, 100, 175, 0.8);
+  background: rgba(8, 100, 175, 1);
 }
 
 #header.header-scrolled, #header.header-inner-pages {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(8, 100, 175, 0.8);
 }
 
 #header .logo {
@@ -433,7 +433,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero:before {
   content: "";
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(8, 100, 175, 0.4);
   position: absolute;
   bottom: 0;
   top: 0;
