@@ -1554,7 +1554,7 @@ section {
 }
 
 #footer .footer-top .footer-links ul a:hover {
-  color: var(--main-color);
+  color: #999999;
 }
 
 #footer .footer-top .footer-newsletter form {
