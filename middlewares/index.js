@@ -25,8 +25,8 @@ middlewareObj.isLoggedIn = async (req, res, next) => {
     }
     // req.flash("error", "You need to be logged in to do that!");
     message = "You need to be logged in to do that!";
-      // res.render("login", { message: message });
-    res.redirect("/account/login");
+      res.render("login", { message: message });
+    // res.redirect("/account/login");
   } catch (error) {
     next(error);
   }

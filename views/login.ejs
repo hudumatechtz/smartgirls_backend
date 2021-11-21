@@ -32,15 +32,15 @@
             </div>
         </div>
         <div id="login" class="container">
+            <% if(message != ''){ %>
+                    <div style="width: 100%; text-align: center; font-size: 35px;">
+                        <h4 style="color: brown;">
+                            <%= message %>
+                        </h4>
+                    </div>
+                    <% } %>
             <div class="ui middle aligned center aligned grid">
                 <div class="column">
-                    <% if(message != ''){ %>
-                <div style="width: 100%; text-align: center;">
-                    <h4 style="color: brown;">
-                        <%= message %>
-                    </h4>
-                </div>
-                <% } %>
                     <legend style="text-align: center; font-size: 35px;">LOGIN TO SMARTGIRLZ</legend>
                     <form name="form" class="box-shadow ui big form">
                         <div class="ui secondary segment ui">
@@ -60,14 +60,17 @@
                                 <div class="container-fluid">
                                     <div class="row">
                                         <div class="col-6">
-                                            <button type="button" class="btn ui primary labeled icon button" id="login-button">
+                                            <button type="button" class="btn ui primary labeled icon button"
+                                                id="login-button">
                                                 <i class="unlock alternate icon"></i>
                                                 Login
                                             </button>
                                         </div>
                                         <div class="col-6">
                                             <a href="/">
-                                                <button id="back-home-button" type="button" class="btn ui primary labeled icon button" style="background: var(--other-color) !important; border: 1px solid var(--other-color) !important">
+                                                <button id="back-home-button" type="button"
+                                                    class="btn ui primary labeled icon button"
+                                                    style="background: var(--other-color) !important; border: 1px solid var(--other-color) !important">
                                                     <i class="home alternate icon"></i>
                                                     Home
                                                 </button>
@@ -87,30 +90,6 @@
             </div>
         </div>
     </section>
-
-    <script>
-    $(function () {
-        $('button.checkoutBtn').on('click', function (e) {
-            e.preventDefault();
-            swal({
-                    title: "Are you sure you want to place your order?",
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
-                })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        swal("Thank you!", "You successfully place order", "success");
-                        location.href = "/cart/place_order";
-                    } else {
-                        swal("You did not place order!");
-                    }
-                });
-
-        });
-    });
-</script>
-
 
     <script src="/js/account.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
