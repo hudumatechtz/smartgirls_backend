@@ -34,6 +34,13 @@
         <div id="login" class="container">
             <div class="ui middle aligned center aligned grid">
                 <div class="column">
+                    <% if(message != ''){ %>
+                <div style="width: 100%; text-align: center;">
+                    <h4 style="color: brown;">
+                        <%= message %>
+                    </h4>
+                </div>
+                <% } %>
                     <legend style="text-align: center; font-size: 35px;">LOGIN TO SMARTGIRLZ</legend>
                     <form name="form" class="box-shadow ui big form">
                         <div class="ui secondary segment ui">
@@ -80,6 +87,30 @@
             </div>
         </div>
     </section>
+
+    <script>
+    $(function () {
+        $('button.checkoutBtn').on('click', function (e) {
+            e.preventDefault();
+            swal({
+                    title: "Are you sure you want to place your order?",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        swal("Thank you!", "You successfully place order", "success");
+                        location.href = "/cart/place_order";
+                    } else {
+                        swal("You did not place order!");
+                    }
+                });
+
+        });
+    });
+</script>
+
 
     <script src="/js/account.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
