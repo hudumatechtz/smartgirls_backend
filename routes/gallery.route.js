@@ -4,4 +4,5 @@ const middleware = require("../middlewares/index");
 
 // router.get("/coachers", coacher.getCoachers);
 router.get("/gallery-admin", middleware.isLoggedIn, gallery.getAdminGallery);
+router.get("/gallery-admin/add-image", middleware.isLoggedIn, gallery.getAddImage);
 module.exports = router;

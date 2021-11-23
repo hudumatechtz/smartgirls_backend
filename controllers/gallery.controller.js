@@ -11,3 +11,11 @@ exports.getAdminGallery = async (req, res, next) => {
     next(err);
   }
 };
+
+exports.getAddImage = async (req, res) => {
+  try {
+    res.render("add-image");
+  } catch (err) {
+    console.error(err);
+  }
+};
