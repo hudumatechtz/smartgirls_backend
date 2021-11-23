@@ -56,9 +56,21 @@
           <li class="drop-down drop-down-links">
             <a href="#">Activities<span></span></a>
             <ul>
+              <% let phases = [{
+                    year: 2020,
+                    description: 'phase 1'
+                  },
+                  {
+                    year: 2021,
+                    description: 'phase 2'
+                  },
+                ]; %>
+              <% for (let phase of phases) { %>
               <li>
-                <a class="header-drop-down-link" href="/activities">HCD Training</a>
+                <a class="header-drop-down-link" href="/activities/<%= phase.year %> "><%= phase.year %> </a>
+                <!-- <a class="header-drop-down-link" href="/activities"><%= phase.year %> </a> -->
               </li>
+              <% } %>
             </ul>
           </li>
           <li><a class="header-link" href="/workforce">The Workforce</a></li>
