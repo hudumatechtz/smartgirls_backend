@@ -1,52 +1,49 @@
 <%- include("includes/admin-header") -%>
 <!-- CONTENTS -->
 <div class="add-article">
-    <div class="container">
-        <div class="add-article-form">
-            <form name="form" method="POST" action="/trainers-admin/add-trainer" enctype="multipart/form-data">
-                <legend style="text-align: center; font-size: 30px;">ADD NEW TRAINER</legend>
-                <div class="form-group">
-                    <label for="title">Trainer Fullname</label>
-                    <input type="text" class="text-center form-control" id="title" placeholder="Trainer name"
-                        name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="title">Phone</label>
-                    <input type="tel" class="text-center form-control" id="title" placeholder="Phone"
-                        name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="title">Email</label>
-                    <input type="email" class="text-center form-control" id="title" placeholder="Email"
-                        name="email" required>
-                </div>
-                 <div class="form-group">
-                     <label for="">School Assigned</label>
-                     <select class="form-control" name="school" placeholder="School">
-                         <% schools.forEach((school) => { %>
-                         <option value="<%= school.name %>"><%= school.name %></option>
-                         <% }); %>
-                     </select>
-                 </div>
+  <div class="container">
+    <div class="add-article-form">
+      <form name="form" method="POST" action="/trainers-admin/add-trainer" enctype="multipart/form-data">
+        <legend style="text-align: center; font-size: 30px;">ADD NEW TRAINER</legend>
+        <div class="form-group">
+          <label for="title">Trainer Fullname</label>
+          <input type="text" class="text-center form-control" id="title" placeholder="Trainer name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="title">Phone</label>
+          <input type="tel" class="text-center form-control" id="title" placeholder="Phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="title">Email</label>
+          <input type="email" class="text-center form-control" id="title" placeholder="Email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="">School Assigned</label>
+          <select class="form-control" name="school" placeholder="School">
+            <% schools.forEach((school) => { %>
+            <option value="<%= school.name %>"><%= school.name %></option>
+            <% }); %>
+          </select>
+        </div>
 
-                <% if(message != ''){ %>
-                <div style="width: 100%; text-align: center;">
-                    <h4 style="color: brown;">
-                        <%= message %>
-                    </h4>
-                </div>
-                <% } %>
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary" id="login-button">Save trainer</button>
-                </div>
-                <!-- <div class="not-spin">
+        <% if(message != ''){ %>
+        <div style="width: 100%; text-align: center;">
+          <h4 style="color: brown;">
+            <%= message %>
+          </h4>
+        </div>
+        <% } %>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary" id="login-button">Save trainer</button>
+        </div>
+        <!-- <div class="not-spin">
         <div class="spinner-border" role="status">
             <span class="sr-only">Loading...</span>
         </div>
     </div> -->
-            </form>
-        </div>
+      </form>
     </div>
+  </div>
 </div>
 
 
