@@ -16,7 +16,8 @@ exports.getAdmins = async (req, res, next) => {
 };
 
 exports.getLogin = async (req, res, next) => {
-  res.render("login");
+  const message = "";
+  res.render("login", {message: message});
 };
 
 exports.postLogin = async (req, res, next) => {

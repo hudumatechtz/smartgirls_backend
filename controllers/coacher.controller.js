@@ -56,7 +56,7 @@ exports.postAddCoacher = async (req, res, next) => {
         if (err) return console.log(err);
 
         console.log("Add coacher success");
-        message = "Coacher was posted successfuly, To view go to coachers";
+        message = "Coacher was posted successfully, To view go to coachers";
         res.render("add-coacher", { message: message, schools: schools });
       });
     }
@@ -122,7 +122,7 @@ exports.postEditCoacher = async (req, res, next) => {
           if (err) return console.log(err);
 
           console.log("Coacher Edited success");
-          message = "Coacher was edited successfuly, To view go to coachers";
+          message = "Coacher was edited successfully, To view go to coachers";
           res.render("edit-coacher", {
             name: name,
             email: email,

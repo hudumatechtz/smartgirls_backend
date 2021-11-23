@@ -32,6 +32,13 @@
             </div>
         </div>
         <div id="login" class="container">
+            <% if(message != ''){ %>
+                    <div style="width: 100%; text-align: center; font-size: 35px;">
+                        <h4 style="color: brown;">
+                            <%= message %>
+                        </h4>
+                    </div>
+                    <% } %>
             <div class="ui middle aligned center aligned grid">
                 <div class="column">
                     <legend style="text-align: center; font-size: 35px;">LOGIN TO SMARTGIRLZ</legend>
@@ -53,14 +60,17 @@
                                 <div class="container-fluid">
                                     <div class="row">
                                         <div class="col-6">
-                                            <button type="button" class="btn ui primary labeled icon button" id="login-button">
+                                            <button type="button" class="btn ui primary labeled icon button"
+                                                id="login-button">
                                                 <i class="unlock alternate icon"></i>
                                                 Login
                                             </button>
                                         </div>
                                         <div class="col-6">
                                             <a href="/">
-                                                <button id="back-home-button" type="button" class="btn ui primary labeled icon button" style="background: var(--other-color) !important; border: 1px solid var(--other-color) !important">
+                                                <button id="back-home-button" type="button"
+                                                    class="btn ui primary labeled icon button"
+                                                    style="background: var(--other-color) !important; border: 1px solid var(--other-color) !important">
                                                     <i class="home alternate icon"></i>
                                                     Home
                                                 </button>
