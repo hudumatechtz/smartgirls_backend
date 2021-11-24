@@ -48,3 +48,15 @@ exports.getAdminArticles = async (req, res, next) => {
     next(error);
   }
 };
+
+//  Get delete article
+exports.getDeleteArticle = (req, res) => {
+  Article.findByIdAndRemove(req.params.id, async (err) => {
+    if (err) return console.log(err);
+
+    
+      res.redirect("/articles-admin");
+    
+  });
+};
+
