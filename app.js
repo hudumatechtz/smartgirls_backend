@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 3000;
 const articleRoute = require("./routes/article.route");
 const trainerRoute = require("./routes/trainer.route");
 const coacherRoute = require("./routes/coacher.route");
+const galleryRoute = require("./routes/gallery.route");
 const pagesRoute = require("./routes/smartgirls.route");
 const authroute = require("./routes/auth.route");
 const schoolRoute = require("./routes/school.route");
@@ -99,6 +100,7 @@ app.use(
 //ROUTES
 app.use(trainerRoute);
 app.use(coacherRoute);
+app.use(galleryRoute);
 app.use(schoolRoute);
 app.use(articleRoute);
 app.use(pagesRoute);

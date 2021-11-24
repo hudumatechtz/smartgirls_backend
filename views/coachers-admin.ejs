@@ -1,23 +1,22 @@
 <%- include("includes/admin-header") -%>
 <!-- CONTENTS -->
 
-<div id="services " class="services" style="overflow: hidden">
-    <div class="container" data-aos="fade-up">
-        <div class="d-flex row">
-            <div class="mt-2 section-title col-6">
-                <!-- <h2>Articles</h2> -->
-                <p>Coachers</p>
-            </div>
-            <div class="mt-2 text-right col-6" style="padding-left: 0; padding-right: 0">
-                <a href="/coachers-admin/add-coacher">
-                    <button type="button" id="add-article-button" class="ui primary labeled icon button"
-                        style="background: var(--main-color) !important; border: 1px solid var(--main-color) !important; margin-right: 0">
-                        <i class="plus icon"></i>
-                        Add Coacher
-                    </button>
-                </a>
-            </div>
-        </div>
+<section id="services " class="services" style="overflow: hidden">
+  <div class="container" data-aos="fade-up">
+    <div class="d-flex row">
+      <div class="mt-2 section-title col-6">
+        <!-- <h2>Articles</h2> -->
+        <p>Coachers</p>
+      </div>
+      <div class="mt-2 text-right col-6" style="padding-left: 0; padding-right: 0">
+        <a href="/coachers-admin/add-coacher">
+          <button type="button" id="add-article-button" class="ui primary labeled icon button" style="background: var(--main-color) !important; border: 1px solid var(--main-color) !important; margin-right: 0">
+            <i class="plus icon"></i>
+            Add Coacher
+          </button>
+        </a>
+      </div>
+    </div>
 
 
         <div class="about" data-aos="fade-up">
@@ -33,49 +32,48 @@
                             <th>Delete</th>
                         </tr>
 
-                    </thead>
-                    <tbody class="align-middle">
-                        <% coachers.forEach((coacher) => { %>
-                        <tr>
-                            <td><%= coacher.name %></td>
-                            <td><%= coacher.email %></td>
-                            <td><%= coacher.phone %></td>
-                            <td><%= coacher.school %></td>
-                            <td><a href="/coachers-admin/edit-coacher/<%= coacher._id %>" id="edit">Edit</a></td>
-                            <td><a href="/coachers-admin/delete-coacher/<%= coacher._id %>" id="delete"><i
-                                        class="fa fa-trash"></i></a></td>
-                        </tr>
-                        <% }); %>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+          </thead>
+          <tbody class="align-middle">
+            <% coachers.forEach((coacher) => { %>
+            <tr>
+              <td><%= coacher.name %></td>
+              <td><%= coacher.email %></td>
+              <td><%= coacher.phone %></td>
+              <td><%= coacher.school %></td>
+              <td><a href="/coachers-admin/edit-coacher/<%= coacher._id %>" id="edit">Edit</a></td>
+              <td><a href="/coachers-admin/delete-coacher/<%= coacher._id %>" id="delete"><i class="fa fa-trash"></i></a></td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
     </div>
-</div>
+  </div>
+</section>
 
 
 <script>
-    $(function () {
-        $('a#delete').on('click', function (e) {
-            var href = this.href;
-            e.preventDefault();
-            swal({
-                    title: "Are you sure you want to delete this coacher?",
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
-                })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        swal("Thank you!", "Coacher Deleted Successfully", "success");
-                        location.href = href;
-                    } else {
-                        swal("You did not delete this coacher!");
-                    }
-                });
-
+  $(function() {
+    $('a#delete').on('click', function(e) {
+      var href = this.href;
+      e.preventDefault();
+      swal({
+          title: "Are you sure you want to delete this coacher?",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        })
+        .then((willDelete) => {
+          if (willDelete) {
+            swal("Thank you!", "Coacher Deleted Successfully", "success");
+            location.href = href;
+          } else {
+            swal("You did not delete this coacher!");
+          }
         });
+
     });
+  });
 </script>
 
 <%- include("includes/admin-footer") -%>

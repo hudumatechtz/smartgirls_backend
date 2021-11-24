@@ -1,29 +1,31 @@
 <%- include("includes/admin-header") %>
-<div id="services " class="services" style="overflow: hidden">
-    <div class="container" data-aos="fade-up">
-        <div class="d-flex row">
-            <div class="section-title col-6 mt-2">
-                <!-- <h2>Articles</h2> -->
-                <p>our Articles</p>
-            </div>
-            <div class="col-6 text-right mt-2" style="padding-left: 0; padding-right: 0">
-                <a href="/articles-admin/add-article">
-                    <button type="button" id="add-article-button" class="ui primary labeled icon button"
-                        style="background: var(--main-color) !important; border: 1px solid var(--main-color) !important; margin-right: 0">
-                        <i class="plus icon"></i>
-                        Add Article
-                    </button>
-                </a>
-            </div>
-        </div>
+<section id="services " class="services" style="overflow: hidden">
+  <div class="container" data-aos="fade-up">
+    <div class="d-flex row">
+      <div class="section-title col-6 mt-2">
+        <!-- <h2>Articles</h2> -->
+        <p>our Articles</p>
+      </div>
+      <div class="col-6 text-right mt-2" style="padding-left: 0; padding-right: 0">
+        <a href="/articles-admin/add-article">
+          <button type="button" id="add-article-button" class="ui primary labeled icon button" style="background: var(--main-color) !important; border: 1px solid var(--main-color) !important; margin-right: 0">
+            <i class="plus icon"></i>
+            Add Article
+          </button>
+        </a>
+      </div>
+    </div>
 
-       <div class="about" data-aos="fade-up">
-            <% articles.forEach((article) => { %>
-            <%- include ("article-card", {article: article}) %>
-            <% }); %>
-        </div>
+    <div class="about" data-aos="fade-up">
+      <% articles.forEach((article) => { %>
+      <%- include ("article-card", {article: article}) %>
+      <% }); %>
     </div>
 </div>
+
+
+  </div>
+</section>
 
 <script>
     $(function () {

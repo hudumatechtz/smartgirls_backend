@@ -2,98 +2,91 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN: SMARTGIRLS</title>
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOGIN: SMARTGIRLS</title>
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
-    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
-        integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
-        crossorigin="anonymous" />
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="/css/account.css" />
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="/css/account.css" />
 </head>
 
 <body>
-    <section style="overflow: hidden;">
-        <div id="cover">
-            <!-- COVER GIRLS -->
-            <div id="contents">
-                <h1>Smart<span>G</span>irlz in ICT</h1>
-                <p style="padding: 15px; text-align: center;">
-                    We are a consortium made up of the University of Dar as Salaam ICT Incubator(UDICTI), Youth for
-                    Children(Y4C) Innovation Hub, Tanzania Data Lab(dLab) and ICT Commission of Tanzania with the main
-                    aims of
-                    supporting and empowering girls and young women in building
-                    capacity on ICT.
-                </p>
-            </div>
-        </div>
-        <div id="login" class="container">
-            <% if(message != ''){ %>
-                    <div style="width: 100%; text-align: center; font-size: 35px;">
-                        <h4 style="color: brown;">
-                            <%= message %>
-                        </h4>
-                    </div>
-                    <% } %>
-            <div class="ui middle aligned center aligned grid">
-                <div class="column">
-                    <legend style="text-align: center; font-size: 35px;">LOGIN TO SMARTGIRLZ</legend>
-                    <form name="form" class="box-shadow ui big form">
-                        <div class="ui secondary segment ui">
-                            <div class="field">
-                                <div class="ui left icon input">
-                                    <i class="user icon"></i>
-                                    <input type="text" id="username" name="username" placeholder="Username">
-                                </div>
-                            </div>
-                            <div class="field">
-                                <div class="ui left icon input">
-                                    <i class="lock icon"></i>
-                                    <input type="password" id="password" name="password" placeholder="Password">
-                                </div>
-                            </div>
-                            <div class="text-center" style="margin-top: 20px;">
-                                <div class="container-fluid">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <button type="button" class="btn ui primary labeled icon button"
-                                                id="login-button">
-                                                <i class="unlock alternate icon"></i>
-                                                Login
-                                            </button>
-                                        </div>
-                                        <div class="col-6">
-                                            <a href="/">
-                                                <button id="back-home-button" type="button"
-                                                    class="btn ui primary labeled icon button"
-                                                    style="background: var(--other-color) !important; border: 1px solid var(--other-color) !important">
-                                                    <i class="home alternate icon"></i>
-                                                    Home
-                                                </button>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="not-spin">
-                            <div class="spinner-border" role="status">
-                                <span class="sr-only">Loading...</span>
-                            </div>
-                        </div>
-                    </form>
+  <section style="overflow: hidden;">
+    <div id="cover">
+      <!-- COVER GIRLS -->
+      <div id="contents">
+        <h1>Smart<span>G</span>irlz in ICT</h1>
+        <p style="padding: 15px; text-align: center;">
+          We are a consortium made up of the University of Dar as Salaam ICT Incubator(UDICTI), Youth for
+          Children(Y4C) Innovation Hub, Tanzania Data Lab(dLab) and ICT Commission of Tanzania with the main
+          aims of
+          supporting and empowering girls and young women in building
+          capacity on ICT.
+        </p>
+      </div>
+    </div>
+    <div id="login" class="container">
+      <% if(message != ''){ %>
+      <div style="width: 100%; text-align: center; font-size: 35px;">
+        <h4 style="color: brown;">
+          <%= message %>
+        </h4>
+      </div>
+      <% } %>
+      <div class="ui middle aligned center aligned grid">
+        <div class="column">
+          <legend style="text-align: center; font-size: 35px;">LOGIN TO SMARTGIRLZ</legend>
+          <form name="form" class="box-shadow ui big form">
+            <div class="ui secondary segment ui">
+              <div class="field">
+                <div class="ui left icon input">
+                  <i class="user icon"></i>
+                  <input type="text" id="username" name="username" placeholder="Username">
                 </div>
+              </div>
+              <div class="field">
+                <div class="ui left icon input">
+                  <i class="lock icon"></i>
+                  <input type="password" id="password" name="password" placeholder="Password">
+                </div>
+              </div>
+              <div class="text-center" style="margin-top: 20px;">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-6">
+                      <button type="button" class="btn ui primary labeled icon button" id="login-button">
+                        <i class="unlock alternate icon"></i>
+                        Login
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <a href="/">
+                        <button id="back-home-button" type="button" class="btn ui primary labeled icon button" style="background: var(--other-color) !important; border: 1px solid var(--other-color) !important">
+                          <i class="home alternate icon"></i>
+                          Home
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+            <div class="not-spin">
+              <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </div>
+          </form>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <script src="/js/account.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="/js/account.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 </body>
 
 </html>

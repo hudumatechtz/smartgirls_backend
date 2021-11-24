@@ -1,24 +1,23 @@
 <%- include("includes/admin-header") -%>
 <!-- CONTENTS -->
 
-<div id="services " class="services" style="overflow: hidden">
-    <div class="container" data-aos="fade-up">
-        <div class="d-flex row">
-            <div class="mt-2 section-title col-6">
-                <!-- <h2>Articles</h2> -->
-                <p>Schools</p>
-            </div>
-            <div class="mt-2 text-right col-6" style="padding-left: 0; padding-right: 0">
-                <a href="/schools-admin/add-school">
-                    <button type="button" id="add-article-button" class="ui primary labeled icon button"
-                        style="background: var(--main-color) !important; border: 1px solid var(--main-color) !important; margin-right: 0">
-                        <i class="plus icon"></i>
-                        Add School
-                    </button>
-                </a>
-            </div>
-        </div>
-        
+<section id="services " class="services" style="overflow: hidden">
+  <div class="container" data-aos="fade-up">
+    <div class="d-flex row">
+      <div class="mt-2 section-title col-6">
+        <!-- <h2>Articles</h2> -->
+        <p>Schools</p>
+      </div>
+      <div class="mt-2 text-right col-6" style="padding-left: 0; padding-right: 0">
+        <a href="/schools-admin/add-school">
+          <button type="button" id="add-article-button" class="ui primary labeled icon button" style="background: var(--main-color) !important; border: 1px solid var(--main-color) !important; margin-right: 0">
+            <i class="plus icon"></i>
+            Add School
+          </button>
+        </a>
+      </div>
+    </div>
+
 
         <div class="about" data-aos="fade-up">
             <div class="table-responsive">
@@ -30,48 +29,45 @@
                             <th>Delete</th>
                         </tr>
 
-                    </thead>
-                    <tbody class="align-middle">
-                        <% schools.forEach((school) => { %>
-                        <tr>
-                            <td><%= school.name %></td>
-                            <td><a href="/schools-admin/edit-school/<%= school._id %>" id="edit">Edit</a></td>
-                            <td><a
-                                    href="/schools-admin/delete-school/<%= school._id %>" id="delete"><i
-                                        class="fa fa-trash"></i></a></td>
-                        </tr>
-                        <% }); %>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+          </thead>
+          <tbody class="align-middle">
+            <% schools.forEach((school) => { %>
+            <tr>
+              <td><%= school.name %></td>
+              <td><a href="/schools-admin/edit-school/<%= school._id %>" id="edit">Edit</a></td>
+              <td><a href="/schools-admin/delete-school/<%= school._id %>" id="delete"><i class="fa fa-trash"></i></a></td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
     </div>
-</div>
+  </div>
+</section>
 
 
 <script>
-    $(function () {
-        $('a#delete').on('click', function (e) {
-            var href = this.href;
-            e.preventDefault();
-            swal({
-                    title: "Are you sure you want to delete this school?",
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
-                })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        swal("Thank you!", "School Deleted Successfully", "success");
-                        location.href = href;
-                    } else {
-                        swal("You did not delete this school!");
-                    }
-                });
-
+  $(function() {
+    $('a#delete').on('click', function(e) {
+      var href = this.href;
+      e.preventDefault();
+      swal({
+          title: "Are you sure you want to delete this school?",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        })
+        .then((willDelete) => {
+          if (willDelete) {
+            swal("Thank you!", "School Deleted Successfully", "success");
+            location.href = href;
+          } else {
+            swal("You did not delete this school!");
+          }
         });
+
     });
+  });
 </script>
 
 <%- include("includes/admin-footer") -%>
-    

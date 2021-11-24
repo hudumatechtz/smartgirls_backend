@@ -1,14 +1,14 @@
 <%- include ("includes/header") %>
-<section id="services " class="services" style="min-height: 100vh; margin-top: 100px; overflow: hidden;">
-    <div class="container" data-aos="fade-up">
-        <div class="section-title mt-2 pb-2">
-            <p>our Articles</p>
-        </div>
-        <div class="about container" data-aos="fade-up">
-            <% articles.forEach((article) => { %>
-                <%- include ("article-card", {article: article}) %>
-            <% }); %>
-        </div>
+<section id="services " class="services" style="min-height: 100vh; margin-top: 80px; overflow: hidden;">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title mt-2 pb-2">
+      <p>our Articles</p>
     </div>
+    <div class="about container" data-aos="fade-up">
+      <% articles.forEach((article) => { %>
+      <%- include ("article-card", {article: article}) %>
+      <% }); %>
+    </div>
+  </div>
 </section>
 <%- include ("includes/footer") %>
