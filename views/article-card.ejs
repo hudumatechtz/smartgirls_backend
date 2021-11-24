@@ -16,11 +16,16 @@
 
         <% if( article.link != '') { %>
             <ul style="padding: 0;">
-            <li style="list-style-type: none !important;" class="extra-article-content">
+            <li style="list-style-type: none !important; display:inline-flex;" class="extra-article-content">
                 <i class="ri-check-double-line"></i> 
-                <a target="_blank" rel="noopener nofollower norefer" href="<%= article.link %>" >Go to output link</a>
+                <a target="_blank"  href="<%= article.link %>" >Go to output link</a>
             </li>
         </ul>
+        <% } %>
+
+        <% if (isAuthenticated) { %>
+        <!-- <a href="/articles-admin/edit-article/<%= article._id %>" class="get-started-btn scrollto">EDIT</a> -->
+        <a href="/articles-admin/delete-article/<%= article._id %>" class="get-started-btn scrollto" id="delete">DELETE</a>
         <% } %>
       
     </div>
