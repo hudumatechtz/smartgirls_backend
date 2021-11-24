@@ -22,7 +22,7 @@ exports.postArticle = async (req, res, next) => {
       message = "Article could not be posted";
       return res.render("add-article", { message: message });
     }
-    message = "Article was posted successfuly, To view go to articles";
+    message = "Article was posted successfully, To view go to articles";
     res.render("add-article", { message: message });
   } catch (error) {
     next(error);
