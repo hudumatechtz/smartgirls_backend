@@ -24,8 +24,18 @@
         <% } %>
 
         <% if (isAuthenticated) { %>
-        <!-- <a href="/articles-admin/edit-article/<%= article._id %>" class="get-started-btn scrollto">EDIT</a> -->
-        <a href="/articles-admin/delete-article/<%= article._id %>" class="get-started-btn scrollto" id="delete">DELETE</a>
+        <a href="/articles-admin/edit-article/<%= article._id %>">
+            <button type="button" id="add-article-button" class="ui primary labeled icon button"
+                        style="background: var(--main-color) !important; border: 1px solid var(--main-color) !important; margin-right: 0">
+                        <i class="setting icon"></i>
+                       EDIT
+                    </button></a>
+        <a href="/articles-admin/delete-article/<%= article._id %>" id="delete">
+            <button type="button" id="add-article-button" class="ui primary labeled icon button"
+                        style="background: red !important; border: 1px solid red !important; margin-right: 0">
+                        <i class="trash icon"></i>
+                       DELETE
+                    </button></a>
         <% } %>
       
     </div>
