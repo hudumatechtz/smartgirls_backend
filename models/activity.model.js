@@ -11,4 +11,4 @@ const activitySchema = new Schema({
    
 }, {timestamps: true});
 
-module.exports = mongoose.model("activity", activitySchema);
+module.exports = mongoose.model("Activity", activitySchema);
