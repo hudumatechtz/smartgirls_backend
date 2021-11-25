@@ -3,10 +3,25 @@ const Phase = require("../models/phase.model");
 const Activity = require("../models/activity.model");
 
 
-exports.getAddPhase = (req, res, next) => {
-  res.render("add-phase", {
-    message: ""
-  });
+exports.getAddPhase = async (req, res, next) => {
+  const id = req.params.id;
+  const activity = await Activity.findById(id);
+  try {
+    if (!activity) {
+      console.log("Activity does not exist");
+      message = "Activity year does not exists, Add new year here.";
+      res.render("add-activity", {
+        message: message
+      });
+    } else {
+      res.render("add-phase", {
+        message: "",
+        activity: activity
+      });
+    }
+  } catch (error) {
+    next(error);
+  }
 };
 
 exports.postPhase = async (req, res, next) => {
