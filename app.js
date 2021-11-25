@@ -74,15 +74,6 @@ app.use("/assets", express.static(path.join(__dirname, "assets")));
 app.use(cookie());
 // app.use(parser.json());
 
-// app.use((req, res, next) => {
-//   res.setHeader("Access-Control-Allow-Origin", "*");
-//   res.setHeader("Access-Control-Allow-Methods", "*");
-//   res.setHeader(
-//     "Access-Control-Allow-Headers",
-//     "Content-Type, X-Requested-With"
-//   ); // res.setHeader('Access-Control-Allow-Credentials', true)
-//   next();
-// });
 app.use(
   session({
     secret: "girls_in_ict",
