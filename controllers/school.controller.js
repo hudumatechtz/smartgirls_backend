@@ -93,7 +93,7 @@ exports.postEditSchool = async (req, res, next) => {
             if (err) return console.log(err);
 
             console.log("School Edited success");
-            message = "School was edited successfuly, To view go to schools";
+            message = "School was edited successfully, To view go to schools";
             res.render("edit-school", { name: name, id: id, message: message });
           });
         } catch (err) {
