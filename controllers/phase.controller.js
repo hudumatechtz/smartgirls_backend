@@ -10,31 +10,42 @@ exports.postPhase = async (req, res, next) => {
     description
   } = req.body;
   let message = "";
-  try {
-    if (!req.file) {
-      const error = new Error("No image file was provided");
-      error.statusCode = 422;
-      return res.render("add-phase", {
-        message: error.message
-      });
-    }
 
-    const newPhase = new Phase({
-      phaseNumber: phaseNumber,
-      theme: theme,
-      description: description
-    });
-    const savedPhase = await newPhase.save();
-    if (!savedPhase) {
-      message = "Phase could not be posted";
-      return res.render("add-phase", {
+  const activity = await Activity.findOne({
+    year: year
+  });
+  try {
+    if (!activity) {
+      console.log("Activity does not exist");
+      message = "Activity year does not exists, Choose another.";
+      res.render("add-activity", {
         message: message
       });
+    } else {
+      const newPhase = new Phase({
+        phaseNumber: phaseNumber,
+        theme: theme,
+        description: description
+      });
+      const savedPhase = await newPhase.save();
+      if (!savedPhase) {
+        message = "Phase could not be posted";
+        return res.render("add-phase", {
+          message: message
+        });
+      }
+      activity.phases.push(newPhase);
+      activity.save(async (err) => {
+        if (err) return console.log(err);
+
+        message = "Phase was posted successfully, To view go to activities";
+        res.render("add-phase", {
+          message: message
+        });
+      });
+
     }
-    message = "Phase was posted successfully, To view go to activities";
-    res.render("add-phase", {
-      message: message
-    });
+
   } catch (error) {
     next(error);
   }
