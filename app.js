@@ -15,6 +15,7 @@ const galleryRoute = require("./routes/gallery.route");
 const pagesRoute = require("./routes/smartgirls.route");
 const authroute = require("./routes/auth.route");
 const schoolRoute = require("./routes/school.route");
+const activityRoute = require("./routes/activity.route");
 const multer = require("multer");
 const cookie = require("cookie-parser");
 const blocker = require("./middlewares/blocker");
@@ -98,6 +99,7 @@ app.use(
   multer({ storage: fileStorage, fileFilter: fileFilter }).single("image")
 );
 //ROUTES
+app.use(activityRoute);
 app.use(trainerRoute);
 app.use(coacherRoute);
 app.use(galleryRoute);
