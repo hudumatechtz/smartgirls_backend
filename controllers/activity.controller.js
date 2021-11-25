@@ -1,7 +1,6 @@
 // /Import Activity model
 const Activity = require("../models/activity.model");
 
-
 // Get all Activities 
 exports.getAdminActivities = async (req, res, next) => {
   const activities = await Activity.find();
@@ -11,6 +10,25 @@ exports.getAdminActivities = async (req, res, next) => {
     });
   } catch (err) {
     next(err);
+  }
+};
+
+// Get specific year Activity
+exports.getActivity = async (req, res, next) => {
+ const id = req.params.id;
+  const activity = await Activity.findById(id).populate("phases");
+  try {
+    if (!activity) {
+      console.log("Activity does not exist");
+      // message = "Activity year does not exists, Add new year here.";
+      res.render("home");
+    } else {
+      res.render("activities", {
+        activity: activity
+      });
+    }
+  } catch (error) {
+    next(error);
   }
 };
 

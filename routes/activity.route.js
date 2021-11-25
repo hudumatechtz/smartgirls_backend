@@ -2,7 +2,7 @@ const router = require("express").Router();
 const activity = require("../controllers/activity.controller");
 const middleware = require("../middlewares/index");
 
-// router.get("/activities", activity.getActivities);
+router.get("/activities/:id", activity.getActivity);
 router.get("/activities-admin", middleware.isLoggedIn, activity.getAdminActivities);
 router.get("/activities-admin/add-activity", middleware.isLoggedIn, activity.getAddActivity);
 router.post("/activities-admin/add-activity", middleware.isLoggedIn, activity.postAddActivity);
