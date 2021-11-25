@@ -3,7 +3,7 @@ const Activity = require("../models/activity.model");
 
 
 
-// Get all Activitys 
+// Get all Activities 
 exports.getAdminActivities = async (req, res, next) => {
   const activities = await Activity.find();
   try {
