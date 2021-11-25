@@ -4,8 +4,10 @@ const Schema = mongoose.Schema;
 
 const activitySchema = new Schema({
     year: Number,
-    phase: String,
-    description: String,
+    phases:  [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Phase"
+    }]
    
 }, {timestamps: true});
 
