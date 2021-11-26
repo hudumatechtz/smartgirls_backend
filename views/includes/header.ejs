@@ -56,7 +56,7 @@
           <li class="drop-down drop-down-links">
             <a href="#">Activities<span></span></a>
             <ul>
-              <% let phases = [{
+              <% let activities = [{
                     year: 2020,
                     description: 'phase 1'
                   },
@@ -65,10 +65,9 @@
                     description: 'phase 2'
                   },
                 ]; %>
-              <% for (let phase of phases) { %>
+              <% for (let activity of activities) { %>
               <li>
-                <a class="header-drop-down-link" href="/activities/<%= phase.year %> "><%= phase.year %> </a>
-                <!-- <a class="header-drop-down-link" href="/activities"><%= phase.year %> </a> -->
+                <a class="header-drop-down-link" href="/activities/<%= activity.year %> "><%= activity.year %> </a>
               </li>
               <% } %>
             </ul>

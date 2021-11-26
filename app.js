@@ -15,6 +15,8 @@ const galleryRoute = require("./routes/gallery.route");
 const pagesRoute = require("./routes/smartgirls.route");
 const authroute = require("./routes/auth.route");
 const schoolRoute = require("./routes/school.route");
+const activityRoute = require("./routes/activity.route");
+const phaseRoute = require("./routes/phase.route");
 const multer = require("multer");
 const cookie = require("cookie-parser");
 const blocker = require("./middlewares/blocker");
@@ -72,15 +74,6 @@ app.use("/assets", express.static(path.join(__dirname, "assets")));
 app.use(cookie());
 // app.use(parser.json());
 
-// app.use((req, res, next) => {
-//   res.setHeader("Access-Control-Allow-Origin", "*");
-//   res.setHeader("Access-Control-Allow-Methods", "*");
-//   res.setHeader(
-//     "Access-Control-Allow-Headers",
-//     "Content-Type, X-Requested-With"
-//   ); // res.setHeader('Access-Control-Allow-Credentials', true)
-//   next();
-// });
 app.use(
   session({
     secret: "girls_in_ict",
@@ -98,6 +91,8 @@ app.use(
   multer({ storage: fileStorage, fileFilter: fileFilter }).single("image")
 );
 //ROUTES
+app.use(activityRoute);
+app.use(phaseRoute);
 app.use(trainerRoute);
 app.use(coacherRoute);
 app.use(galleryRoute);
