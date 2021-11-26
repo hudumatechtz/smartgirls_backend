@@ -3,11 +3,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const gallerySchema = new Schema({
-  year: {
+  imageUrl: {
     type: String,
     required: true,
   },
-  description: {
+  caption: {
     type: String,
     required: true,
   }

@@ -26,17 +26,17 @@
       var href = this.href;
       e.preventDefault();
       swal({
-          title: "Are you sure you want to delete this coacher?",
+          title: "Are you sure you want to delete this image?",
           icon: "warning",
           buttons: true,
           dangerMode: true,
         })
         .then((willDelete) => {
           if (willDelete) {
-            swal("Thank you!", "Coacher Deleted Successfully", "success");
+            swal("Thank you!", "Image Deleted Successfully", "success");
             location.href = href;
           } else {
-            swal("You did not delete this coacher!");
+            swal("You did not delete this image!");
           }
         });
 
