@@ -3,7 +3,7 @@ const Activity = require("../models/activity.model");
 
 // Get all Activities 
 exports.getAdminActivities = async (req, res, next) => {
-  const activities = await Activity.find();
+  const activities = await Activity.find().populate("phases").exec();
   try {
     res.render("activities-admin", {
       activities: activities

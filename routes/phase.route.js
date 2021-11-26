@@ -1,4 +1,4 @@
-const router = require("express").Router();
+const router = require("express").Router({mergeParams:true});
 const phase = require("../controllers/phase.controller");
 const middleware = require("../middlewares/index");
 
