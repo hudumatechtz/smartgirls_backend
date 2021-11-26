@@ -1,4 +1,4 @@
-<%- include("../includes/admin-header") -%>
+<%- include("./includes/admin-header") -%>
 <!-- CONTENTS -->
 
 <section id="services " class="services" style="overflow: hidden">
@@ -19,18 +19,18 @@
     </div>
 
 
-        <div class="about" data-aos="fade-up">
-            <div class="table-responsive">
-                <table class="table table-bordered">
-                    <thead class="thead-light">
-                        <tr>
-                            <th>Year</th>
-                            <th>Phase No</th>
-                            <th>Phase theme</th>
-                            <th>Phase description</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
+    <div class="about" data-aos="fade-up">
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead class="thead-light">
+            <tr>
+              <th>Year</th>
+              <th>Phase No</th>
+              <th>Phase theme</th>
+              <!-- <th>Phase description</th> -->
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
 
           </thead>
           <tbody class="align-middle">
@@ -40,7 +40,7 @@
               <% activity.phases.forEach(function(phase) { %>
               <td><%= phase.phaseNumber %></td>
               <td><%= phase.theme %></td>
-              <td><%= phase.description %></td>
+              <!-- <td><%= phase.description %></td> -->
 
               <td><a href="/phases-admin/<%= activity._id %>/edit-phase/<%= phase._id %>" id="edit">Edit</a></td>
               <td><a href="/phases-admin/delete-phase/<%= phase._id %>" id="delete"><i class="fa fa-trash"></i></a></td>
@@ -79,4 +79,4 @@
   });
 </script>
 
-<%- include("../includes/admin-footer") -%>
+<%- include("./includes/admin-footer") -%>

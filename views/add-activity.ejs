@@ -1,15 +1,14 @@
-<%- include("../includes/admin-header") -%>
+<%- include("./includes/admin-header") -%>
 <!-- CONTENTS -->
 <div class="add-article">
-    <div class="container">
-        <div class="add-article-form">
-            <form name="form" method="POST" action="/activities-admin/add-activity" enctype="multipart/form-data">
-                <legend style="text-align: center; font-size: 30px;">ADD NEW ACTIVITY YEAR</legend>
-                <div class="form-group">
-                    <label for="title">Activity year</label>
-                    <input type="number" class="form-control" id="title" placeholder="Year"
-                        name="year">
-                </div>
+  <div class="container">
+    <div class="add-article-form">
+      <form name="form" method="POST" action="/activities-admin/add-activity" enctype="multipart/form-data">
+        <legend style="text-align: center; font-size: 30px;">ADD NEW ACTIVITY YEAR</legend>
+        <div class="form-group">
+          <label for="title">Activity year</label>
+          <input type="number" class="form-control" id="title" placeholder="Year" name="year">
+        </div>
 
         <% if(message != ''){ %>
         <div style="width: 100%; text-align: center;">
@@ -50,4 +49,4 @@
   });
 </script>
 
-<%- include("../includes/admin-footer") -%>
+<%- include("./includes/admin-footer") -%>
