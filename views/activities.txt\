@@ -1,0 +1,165 @@
+<div>
+      <h2>Activities</h2>
+      <p style="text-align: justify;">To implement the programme, the consortium recruited six (6) secondary
+        schools, among them, three (3) are government schools (Kawe Ukwamani, Mikocheni and Salma kikwete) and
+        three (3) private schools (Feza Girls, Baobab Girls and Alpha). Female (girls) students in the recruited
+        school were trained in three phases on theory and technical aspects in software development. Moreover,
+        students participated in solving real social challenges through in-school competitions, following which
+        the winning teams were further coached and offered technical training to implement their solutions and
+        as well as prepare for inter-schools competition. The finale of the SmartGirlz ICT Competition was to be
+        held during the International Girls in ICT Day in 2020, whereby the three top most winning teams will be
+        awarded. However this plan was interrupted by lock-down due to COVID-19 pandemic where schools were
+        closed and hence the programme stopped abruptly.</p>
+    </div>
+    <div>
+      <h2>Phase 1</h2>
+      <p style="text-align: justify;">During Phase 1 of this programme, students from six schools were trained on
+        training that took five months (July – November, 2019) included theory, technical and competitions. In
+        the theory part, students were trained on Innovation, Human Centered Design (HCD) skills to nurture
+        their creativity, research, innovation, soft skills and software systems design. During this phase,
+        students were divided into teams of five t3o six students in each team. A total of 298 students from six
+        schools participated in this programme. At the end of phase one (theory part), each team was supposed to
+        come up with a prototype of a solution to the following challenge i.e. Effect of teen pregnancy and
+        early marriage on girls’ career development. Each team came up with a solutions idea and a prototype of
+        the solutions they generated. The outputs were impressive, students managed to generate ideas as a
+        solution the set challenge in the following categories:</p>
+      <ul style="list-style-type: disc">
+        <li>Campaigns</li>
+        <li>Mobile application/text messages</li>
+        <li>Smart Watch</li>
+        <li>Formal education to Communication/Society</li>
+        <li>Empowering economically young girls and parents</li>
+        <li>Entreprenuership skills for parents to conquer poverty and afford girls needs</li>
+        <li>Eliminate bad cultural habits that lead to early pregnancy</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Phase 2</h2>
+      <p style="text-align: justify;">In phase two (Oct – Nov, 2019), the students did hands-on practical work to
+        design mobile and web-based software. In the first week of December, 2019, the teams in each school
+        entered into an in-school competitions where the generated solution prototypes were evaluated to get
+        three (3) best ideas as shown in table 1. Note that Baobab and Alpha did not do In-school competition as
+        they had already gone for a December long vacation. </p>
+    </div>
+    <div>
+      <table class="table table-bordered table-responsive-md">
+        <thead>
+          <tr style="background: var(--grey-color)">
+            <th scope="col">Sn</th>
+            <th scope="col" style="min-width: 150px;">School name</th>
+            <th scope="col">Position</th>
+            <th scope="col">Team name</th>
+            <th scope="col">Idea description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row" rowspan="3" style="vertical-align: middle">1</td>
+            <td rowspan="3" style="vertical-align: middle">Feza Girls</td>
+            <td>1<sup>st</sup></td>
+            <td>Ace</td>
+            <td>Edutainment Game namely Demu Kitaa(Real life emulation education game)</td>
+          </tr>
+          <tr>
+            <td>2<sup>nd</sup></td>
+            <td>Blackhole</td>
+            <td>Team Vibes Mobile app(Creation and consuption of information)</td>
+          </tr>
+          <tr>
+            <td>3<sup>rd</sup></td>
+            <td>Aesthetics</td>
+            <td>Woman Empowerment Forum App(A king of instagram but customized for women and teens)</td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr style="background: var(--grey-color)">
+            <th scope="col">Sn</th>
+            <th scope="col">School name</th>
+            <th scope="col">Position</th>
+            <th scope="col">Team name</th>
+            <th scope="col">Idea description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row" rowspan="3" style="vertical-align: middle">2</td>
+            <td rowspan="3" style="vertical-align: middle">Kawe</td>
+            <td>1<sup>st</sup></td>
+            <td>best fighters</td>
+            <td>Mobile App to educate and improve teens behaviour.</td>
+          </tr>
+          <tr>
+            <td>2<sup>nd</sup></td>
+            <td>Precious Investors</td>
+            <td>Mobile App to improve S&R health services and education.</td>
+          </tr>
+          <tr>
+            <td>3<sup>rt</sup></td>
+            <td>Critical Thinkers</td>
+            <td>Mobile App that act as parenting community/forum.</td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr style="background: var(--grey-color)">
+            <th scope="col">Sn</th>
+            <th scope="col">School name</th>
+            <th scope="col">Position</th>
+            <th scope="col">Team name</th>
+            <th scope="col">Idea description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row" rowspan="3" style="vertical-align: middle">3</td>
+            <td rowspan="3" style="vertical-align: middle">Mikocheni</td>
+            <td>1<sup>st</sup></td>
+            <td>Innovetors Girl</td>
+            <td>Mobile App that provide free online books.</td>
+          </tr>
+          <tr>
+            <td>2<sup>nd</sup></td>
+            <td>The Heroes.</td>
+            <td>Mobile App that support local financial bank.</td>
+          </tr>
+          <tr>
+            <td>3<sup>rd</sup></td>
+            <td>Victory of Miracles</td>
+            <td>Mobile App that offers free online edutainment materials</td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr style="background: var(--grey-color)">
+            <th scope="col">Sn</th>
+            <th scope="col">School name</th>
+            <th scope="col">Position</th>
+            <th scope="col">Team name</th>
+            <th scope="col">Idea description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row" rowspan="3" style="vertical-align: middle">4</td>
+            <td rowspan="3" style="vertical-align: middle">Salma kikwete</td>
+            <td>1<sup>st</sup></td>
+            <td>Strong Girls</td>
+            <td>Mobile App to Disseminate knowledge on teen pregnancy</td>
+          </tr>
+          <tr>
+            <td>2<sup>nd</sup></td>
+            <td>Intelligensia group & Unstoppable girls</td>
+            <td>Disseminate knowledge on Effect of teens pregnancy/early marriage and Entreprenuership</td>
+          </tr>
+          <tr>
+            <td>3<sup>rd</sup></td>
+            <td>Perfect girls</td>
+            <td>Mobile App for knowledge dissemination</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h2>Phase 3</h2>
+      <p>In phase 3, students were trained on web based and mobile software development. This training was
+        interrupted by lock-down due to COVID-19 pandemic. The plan in place is to continue with this training
+        and competitions in September, 2020</p>
+    </div>
