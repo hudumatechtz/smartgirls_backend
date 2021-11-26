@@ -153,7 +153,7 @@ exports.postEditPhase = async (req, res, next) => {
 
 //  Get delete phase
 exports.getDeletePhase = (req, res) => {
-  Phase.findByIdAndRemove(req.params.id, async (err) => {
+  Phase.findByIdAndRemove(req.params.phase_id, async (err) => {
     if (err) return console.log(err);
 
 
