@@ -16,7 +16,7 @@ exports.getAdminActivities = async (req, res, next) => {
 // Get specific year Activity
 exports.getActivity = async (req, res, next) => {
  const year = req.params.year;
-  const activity = await Activity.findOne(year).populate("phases");
+  const activity = await Activity.findOne(year).populate("phases").exec();
   try {
     if (!activity) {
       console.log("Activity does not exist");

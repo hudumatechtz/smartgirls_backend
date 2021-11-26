@@ -24,7 +24,7 @@ exports.getAddPhase = async (req, res, next) => {
   }
 };
 
-exports.postPhase = async (req, res, next) => {
+exports.postAddPhase = async (req, res, next) => {
   const {
     phaseNumber,
     theme,
@@ -60,6 +60,7 @@ exports.postPhase = async (req, res, next) => {
 
         message = "Phase was posted successfully, To view go to activities";
         res.render("add-phase", {
+          activity: activity,
           message: message
         });
       });
@@ -102,7 +103,7 @@ exports.postPhase = async (req, res, next) => {
 exports.getEditPhase = async (req, res, next) => {
   const message = "";
 
-  const activity = await Activity.findById(id);
+  const activity = await Activity.findById(req.params.id);
   try {
     if (!activity) {
       console.log("Activity does not exist");
@@ -125,49 +126,30 @@ exports.getEditPhase = async (req, res, next) => {
 
 //POST Edit-phase
 exports.postEditPhase = async (req, res, next) => {
-  var name = req.body.name;
-  var slug = name.replace(/\s+/g, "-").toLowerCase();
-  var id = req.params.id;
 
-  const phase = await Phase.findOne({
-    slug: slug,
-    _id: {
-      $ne: id
-    }
-  });
-  try {
-    if (phase) {
-      console.log("Phase already exist");
-      message = "Phase name exists, Choose another.";
-      res.render("edit-phase", {
-        name: name,
-        id: id,
-        message: message
-      });
-    } else {
-      const sch = await Phase.findById(id);
+  const activity = await Activity.findById(req.params.id);
+  const phase = await Phase.findById(req.params.phase_id);
+
       try {
-        sch.name = name;
-        sch.slug = slug;
-        sch.save(async (err) => {
+        phase.phaseNumber = req.body.phaseNumber;
+        phase.theme = req.body.theme;
+        phase.description = req.body.description;
+
+        phase.save(async (err) => {
           if (err) return console.log(err);
 
           console.log("Phase Edited success");
           message = "Phase was edited successfully, To view go to phases";
           res.render("edit-phase", {
-            name: name,
-            id: id,
+            activity:activity,
+            phase:phase,
             message: message
           });
         });
       } catch (err) {
         next(err);
       }
-    }
-  } catch (err) {
-    next(err);
-  }
-};
+  };
 
 //  Get delete phase
 exports.getDeletePhase = (req, res) => {
