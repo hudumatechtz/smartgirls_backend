@@ -97,6 +97,78 @@ exports.postPhase = async (req, res, next) => {
 //   }
 // };
 
+
+// GET edit phase
+exports.getEditPhase = async (req, res, next) => {
+  const message = "";
+
+  const activity = await Activity.findById(id);
+  try {
+    if (!activity) {
+      console.log("Activity does not exist");
+      message = "Activity year does not exists, Choose another.";
+      res.render("add-activity", {
+        message: message
+      });
+    } else {
+      const phase = await Phase.findById(req.params.phase_id);
+      res.render("edit-phase", {
+        activity: activity,
+        phase: phase,
+        message: message
+      });
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+
+//POST Edit-phase
+exports.postEditPhase = async (req, res, next) => {
+  var name = req.body.name;
+  var slug = name.replace(/\s+/g, "-").toLowerCase();
+  var id = req.params.id;
+
+  const phase = await Phase.findOne({
+    slug: slug,
+    _id: {
+      $ne: id
+    }
+  });
+  try {
+    if (phase) {
+      console.log("Phase already exist");
+      message = "Phase name exists, Choose another.";
+      res.render("edit-phase", {
+        name: name,
+        id: id,
+        message: message
+      });
+    } else {
+      const sch = await Phase.findById(id);
+      try {
+        sch.name = name;
+        sch.slug = slug;
+        sch.save(async (err) => {
+          if (err) return console.log(err);
+
+          console.log("Phase Edited success");
+          message = "Phase was edited successfully, To view go to phases";
+          res.render("edit-phase", {
+            name: name,
+            id: id,
+            message: message
+          });
+        });
+      } catch (err) {
+        next(err);
+      }
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+
 //  Get delete phase
 exports.getDeletePhase = (req, res) => {
   Phase.findByIdAndRemove(req.params.id, async (err) => {
