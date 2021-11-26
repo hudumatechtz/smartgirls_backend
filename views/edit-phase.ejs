@@ -6,7 +6,7 @@
       <form name="form" method="POST" action="/phases-admin/<%= activity._id %>/edit-phase/<%= phase._id %>" enctype="multipart/form-data">
         <legend style="text-align: center; font-size: 30px;">EDIT PHASE <%= phase.phaseNumber %> in <%= activity.year %> </legend>
         <div class="form-group">
-          <label for="title">Phase number</label>
+          <label for="phaseNumber">Phase number</label>
           <input type="number" class="form-control" id="title" placeholder="Phase number" name="phaseNumber" value="<%= phase.phaseNumber %>">
         </div>
 
@@ -16,7 +16,7 @@
         </div>
         <div class="form-group">
           <label for="description">Description</label>
-          <textarea name="description" value="<%= phase.description %>" id="ta" rows="10" placeholder="description" style="width: 100%;"></textarea>
+          <textarea name="description"  id="ta" rows="10"  style="width: 100%;"><%= phase.description %></textarea>
         </div>
 
 
