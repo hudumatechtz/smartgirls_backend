@@ -20,6 +20,9 @@ const phaseRoute = require("./routes/phase.route");
 const multer = require("multer");
 const cookie = require("cookie-parser");
 const blocker = require("./middlewares/blocker");
+
+const Activity = require("./models/activity.model");
+
 const store = new mongoDbStore(
   {
     uri: MONGO_URI,
@@ -83,7 +86,9 @@ app.use(
   })
 );
 app.use(checkUser);
-app.use((req, res, next) => {
+app.use(async(req, res, next) => {
+  const activities = await Activity.find().populate("phases").exec();
+  res.locals.activities = activities;
   res.locals.isAuthenticated = req.session.isLoggedIn;
   next();
 });

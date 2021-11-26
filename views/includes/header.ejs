@@ -17,7 +17,9 @@
       |Raleway:300,300i,400,400i,500,500i,600,600i,700,700i
       |Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <!-- Sementic UI -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+    crossorigin="anonymous">
 
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
   <!-- Vendor CSS Files -->
@@ -56,20 +58,12 @@
           <li class="drop-down drop-down-links">
             <a href="#">Activities<span></span></a>
             <ul>
-              <% let activities = [{
-                    year: 2020,
-                    description: 'phase 1'
-                  },
-                  {
-                    year: 2021,
-                    description: 'phase 2'
-                  },
-                ]; %>
-              <% for (let activity of activities) { %>
+
+              <% activities.forEach((activity) => { %>
               <li>
                 <a class="header-drop-down-link" href="/activities/<%= activity.year %> "><%= activity.year %> </a>
               </li>
-              <% } %>
+              <% }); %>
             </ul>
           </li>
           <li><a class="header-link" href="/workforce">The Workforce</a></li>
@@ -90,7 +84,7 @@
   </header>
   <!-- End Header -->
   <script>
-    (function() {
+    (function () {
       var currentLink = location.pathname.split("/")[1];
       if (currentLink === "") return;
       var headerLinks = document.querySelectorAll(".header-link");
