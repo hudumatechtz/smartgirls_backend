@@ -20,11 +20,15 @@
 
 
     <div class="about" data-aos="fade-up">
+      <% activities.forEach((activity) => { %>
+
+      <span style="font-size: 20px; margin-bottom: 20px; margin-right: 10px">Year <%= activity.year %></span>
+      <a class="text-primary" href="/phases-admin/<%= activity._id %>/add-phase" id="edit">Add Phase</a>
+
       <div class="table-responsive">
         <table class="table table-bordered">
           <thead class="thead-light">
             <tr>
-              <th>Year</th>
               <th>Phase No</th>
               <th>Phase theme</th>
               <!-- <th>Phase description</th> -->
@@ -34,22 +38,22 @@
 
           </thead>
           <tbody class="align-middle">
-            <% activities.forEach((activity) => { %>
+
+            <% activity.phases.forEach(function(phase) { %>
             <tr>
-              <td><%= activity.year %> <a href="/phases-admin/<%= activity._id %>/add-phase" id="edit">Add Phase</a></td>
-              <% activity.phases.forEach(function(phase) { %>
               <td><%= phase.phaseNumber %></td>
               <td><%= phase.theme %></td>
               <!-- <td><%= phase.description %></td> -->
 
               <td><a href="/phases-admin/<%= activity._id %>/edit-phase/<%= phase._id %>" id="edit">Edit</a></td>
               <td><a href="/phases-admin/delete-phase/<%= phase._id %>" id="delete"><i class="fa fa-trash"></i></a></td>
-              <%}); %>
             </tr>
-            <% }); %>
+            <%}); %>
+
           </tbody>
         </table>
       </div>
+      <% }); %>
     </div>
   </div>
 </section>
