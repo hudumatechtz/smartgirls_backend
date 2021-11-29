@@ -27,5 +27,5 @@ exports.getGallery = (req, res, next) => {
   res.render("gallery");
 };
 exports.getDashboard = (req, res, next) => {
-  res.render("dashboard");
+  res.redirect("/activities-admin");
 };
