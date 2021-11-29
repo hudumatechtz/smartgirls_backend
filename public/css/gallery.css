@@ -3,9 +3,9 @@ img {
     transition: 0.3s;
 }
 
-/* img:hover {
+img:hover {
     opacity: 0.7;
-} */
+}
 
 .gallery-image-wrapper {
     align-self: stretch !important;
@@ -102,8 +102,6 @@ img {
     z-index: 1;
     transform: translateY(-50%);
     max-width: 700px;
-    opacity: 0.7;
-
 }
 
 /* Caption of Modal Image */
