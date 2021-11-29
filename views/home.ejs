@@ -205,6 +205,7 @@
     <!-- End Cta Section -->
 
     <!-- ======= Portfolio Section ======= -->
+    <% if (gallery.length > 0) { %>
     <section id="portfolio" class="portfolio">
       <div class="container" data-aos="fade-up">
         <div class="section-title">
@@ -223,11 +224,14 @@
         </div>
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-          <% for(i = 2; i <= 7; i++) { const src = "images/" + i + ".jpg" %> <%-
-          include ("./portfolio", {src: src}) %> <% } %>
+          <% gallery.slice(-6).forEach((image) => { %>
+          <%- include ("./portfolio", {src: image.imageUrl}) %>
+          <% }); %>
         </div>
       </div>
     </section>
+    <% } %>
+
     <!-- End Portfolio Section -->
 
     <!-- ======= Counts Section ======= -->

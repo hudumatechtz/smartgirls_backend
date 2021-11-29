@@ -6,17 +6,26 @@
       <form name="form" method="POST" action="/gallery-admin/add-image" enctype="multipart/form-data">
         <legend style="text-align: center; font-size: 30px;">ADD NEW IMAGE</legend>
 
+
         <div class="form-group">
           <label for="image">Image</label>
-          <input type="file" class="form-control text-center" id="image" name="image">
+          <input type="file" class="form-control text-center" id="img" name="image">
           <img src="#" alt="" id="imgPreview">
         </div>
 
 
         <div class="form-group">
           <label for="img-caption">Image Caption</label>
-          <input type="text" class="form-control" id="img-caption" placeholder="Enter image caption" name="link">
+          <input type="text" class="form-control" id="img-caption" placeholder="Enter image caption" name="caption">
         </div>
+
+        <% if(message != ''){ %>
+        <div style="width: 100%; text-align: center;">
+          <h4 style="color: brown;">
+            <%= message %>
+          </h4>
+        </div>
+        <% } %>
 
         <div class="text-center">
           <button type="submit" class="btn btn-primary" id="login-button">Save Image</button>
@@ -32,23 +41,22 @@
 </div>
 
 <script>
-    //Preview Image
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
+  //Preview Image
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
 
-            reader.onload = function (e) {
-                $("#imgPreview").attr('src', e.target.result).width(100).height(100);
-            }
+      reader.onload = function(e) {
+        $("#imgPreview").attr('src', e.target.result).width(100).height(100);
+      }
 
-            reader.readAsDataURL(input.files[0]);
-        }
+      reader.readAsDataURL(input.files[0]);
     }
+  }
 
-    $("#img").change(function () {
-        readURL(this);
-    });
-
+  $("#img").change(function() {
+    readURL(this);
+  });
 </script>
 
 

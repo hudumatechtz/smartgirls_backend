@@ -17,6 +17,17 @@
         </a>
       </div>
     </div>
+
+    <div class="box-shadow" style="padding: 0 10px 10px 0; display: inline-flex; flex-wrap: wrap;width: 100%; justify-content: stretch !important; margin-right: 0 !important;">
+      <% gallery.forEach(function(img){ %>
+      <div class="gallery-image-wrapper">
+        <div class="gallery-image">
+          <img class="myImg" src="<%= img.imageUrl %>" alt="<%= img.caption %> ">
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </div>
 </section>
 
 

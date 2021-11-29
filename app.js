@@ -22,6 +22,7 @@ const cookie = require("cookie-parser");
 const blocker = require("./middlewares/blocker");
 
 const Activity = require("./models/activity.model");
+const Gallery = require("./models/gallery.model");
 
 const store = new mongoDbStore(
   {
@@ -88,6 +89,9 @@ app.use(
 app.use(checkUser);
 app.use(async(req, res, next) => {
   const activities = await Activity.find().populate("phases").exec();
+  const gallery = await Gallery.find();
+
+  res.locals.gallery = gallery;
   res.locals.activities = activities;
   res.locals.isAuthenticated = req.session.isLoggedIn;
   next();
