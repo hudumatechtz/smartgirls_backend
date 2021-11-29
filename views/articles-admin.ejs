@@ -21,33 +21,33 @@
       <%- include ("article-card", {article: article}) %>
       <% }); %>
     </div>
-</div>
+  </div>
 
 
   </div>
 </section>
 
 <script>
-    $(function () {
-        $('a#delete').on('click', function (e) {
-            var href = this.href;
-            e.preventDefault();
-            swal({
-                    title: "Are you sure you want to delete this article?",
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
-                })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        swal("Thank you!", "article Deleted Successfully", "success");
-                        location.href = href;
-                    } else {
-                        swal("You did not delete this article!");
-                    }
-                });
-
+  $(function() {
+    $('a#delete').on('click', function(e) {
+      var href = this.href;
+      e.preventDefault();
+      swal({
+          title: "Are you sure you want to delete this article?",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        })
+        .then((willDelete) => {
+          if (willDelete) {
+            swal("Thank you!", "article Deleted Successfully", "success");
+            location.href = href;
+          } else {
+            swal("You did not delete this article!");
+          }
         });
+
     });
+  });
 </script>
 <%- include("includes/admin-footer") -%>
