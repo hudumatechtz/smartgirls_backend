@@ -225,7 +225,7 @@
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
           <% gallery.slice(-6).forEach((image) => { %>
-          <%- include ("./portfolio", {src: image.imageUrl}) %>
+          <%- include ("./portfolio", {src: image.imageUrl, caption: image.caption}) %>
           <% }); %>
         </div>
       </div>
