@@ -46,3 +46,11 @@ exports.getAddImage = async (req, res) => {
     console.error(err);
   }
 };
+
+exports.getEditImage = async (req, res) => {
+  try {
+    res.render("edit-image", { message: "" });
+  } catch (err) {
+    console.error(err);
+  }
+};

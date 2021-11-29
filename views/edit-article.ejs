@@ -1,0 +1,72 @@
+<%- include("includes/admin-header") -%>
+<!-- CONTENTS -->
+<div class="add-article">
+  <div class="container">
+    <div class="add-article-form">
+      <form name="form" method="POST" action="/articles-admin/add-article" enctype="multipart/form-data">
+        <legend style="text-align: center; font-size: 30px;">EDIT ARTICLE</legend>
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" id="title" placeholder="Article title" name="title">
+        </div>
+        <div class="form-group">
+          <label for="image">Image</label>
+          <input type="file" class="form-control text-center" id="img" name="image">
+          <img src="#" alt="" id="imgPreview">
+        </div>
+        <!-- <div class="form-group">
+        <label for=""></label>
+        <input type="text" class="form-control text-center" id="description" placeholder="extra stuff"
+            name="">
+        </div> -->
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea name="description" id="ta" rows="10" placeholder="description" style="width: 100%;"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Output link</label>
+          <p style="color: brown;">Add one link per website. If you have none, leave it empty </p>
+          <input type="text" class="form-control text-center" id="title" placeholder="link" name="link">
+        </div>
+        <% if(message != ''){ %>
+        <div style="width: 100%; text-align: center;">
+          <h4 style="color: brown;">
+            <%= message %>
+          </h4>
+        </div>
+        <% } %>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary" id="login-button">Update article</button>
+        </div>
+        <!-- <div class="not-spin">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+       </div> -->
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  //Preview Image
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function(e) {
+        $("#imgPreview").attr('src', e.target.result).width(100).height(100);
+      }
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  $("#img").change(function() {
+    readURL(this);
+  });
+</script>
+
+
+<%- include("includes/admin-footer") -%>

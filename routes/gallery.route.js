@@ -6,5 +6,6 @@ const middleware = require("../middlewares/index");
 router.get("/gallery-admin", middleware.isLoggedIn, gallery.getAdminGallery);
 router.get("/gallery-admin/add-image", middleware.isLoggedIn, gallery.getAddImage);
 router.post("/gallery-admin/add-image", middleware.isLoggedIn, gallery.postImage);
+router.get("/gallery-admin/edit-image", middleware.isLoggedIn, gallery.getEditImage);
 
 module.exports = router;

@@ -39,6 +39,9 @@ exports.getArticles = async (req, res, next) => {
 exports.getAddArticle = (req, res, next) => {
   res.render("add-article", { message: "" });
 };
+exports.getEditArticle = (req, res, next) => {
+  res.render("edit-article", { message: "" });
+};
 exports.getAdminArticles = async (req, res, next) => {
   // const deleteArticle = await Article.deleteMany({});
   try {
