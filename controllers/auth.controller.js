@@ -68,7 +68,7 @@ exports.postRegister = async (req, res, next) => {
     // res.redirect("/account/login");
     // res.json({ user: savedUser });
     res.render("add-admin", {
-      message: "Admin added successfuly, To view go to Admins",
+      message: "Admin added successfully, To view go to Admins",
     });
   } catch (error) {
     next(error);
