@@ -8,4 +8,5 @@ router.get("/articles-admin/add-article", middleware.isLoggedIn, article.getAddA
 router.post("/articles-admin/add-article", middleware.isLoggedIn, article.postArticle);
 router.get("/articles-admin/delete-article/:id", middleware.isLoggedIn, article.getDeleteArticle);
 router.get("/articles-admin/edit-article/:id", middleware.isLoggedIn, article.getEditArticle);
+router.post("/articles-admin/edit-article/:id", middleware.isLoggedIn, article.postEditArticle);
 module.exports = router;
