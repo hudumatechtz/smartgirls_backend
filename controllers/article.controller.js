@@ -40,8 +40,27 @@ exports.getAddArticle = (req, res, next) => {
   res.render("add-article", { message: "" });
 };
 exports.getEditArticle = (req, res, next) => {
-  res.render("edit-article", { message: "" });
+  const message = "";
+
+  const article = await Article.findById(req.params.id);
+  try {
+    if (!article) {
+      console.log("Article does not exist");
+      message = "Article does not exists, Choose or Add another.";
+      res.render("add-article", {
+        message: message
+      });
+    } else {
+      res.render("edit-article", {
+        article: article,
+        message: message
+      });
+    }
+  } catch (err) {
+    next(err);
+  }
 };
+
 exports.getAdminArticles = async (req, res, next) => {
   // const deleteArticle = await Article.deleteMany({});
   try {
