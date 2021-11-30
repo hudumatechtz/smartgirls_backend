@@ -29,7 +29,7 @@
           Add Phase
         </button>
       </a>
-      <a href="/activities-admin/delete-activity/<%= activity._id %>" id="delete">
+      <a href="/activities-admin/delete-activity/<%= activity._id %>" id="deleteYear">
         <button type="button" id="add-article-button" class="ui primary labeled icon button" style="background: red !important; border: 1px solid red !important; margin-right: 0; margin-bottom: 10px;">
           <i class="trash icon"></i>
           Delete Activity Year
@@ -87,6 +87,26 @@
             location.href = href;
           } else {
             swal("You did not delete this phase!");
+          }
+        });
+
+    });
+
+    $('a#deleteYear').on('click', function(e) {
+      var href = this.href;
+      e.preventDefault();
+      swal({
+          title: "Are you sure you want to delete this year activity?",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        })
+        .then((willDelete) => {
+          if (willDelete) {
+            swal("Thank you!", "Year Deleted Successfully", "success");
+            location.href = href;
+          } else {
+            swal("You did not delete this year!");
           }
         });
 
