@@ -28,6 +28,7 @@ exports.postArticle = async (req, res, next) => {
     next(error);
   }
 };
+
 exports.getArticles = async (req, res, next) => {
   const articles = await Article.find();
   try {
@@ -58,6 +59,40 @@ exports.getEditArticle = (req, res, next) => {
     }
   } catch (err) {
     next(err);
+  }
+};
+
+exports.postEditArticle = async (req, res, next) => {
+  const { title, description, link } = req.body;
+  let message = "";
+  const article = await Article.findById(req.params.id);
+  try {
+    if (!req.file) {
+      const error = new Error("No image file was provided");
+      error.statusCode = 422;
+      return res.render("add-article", { message: error.message });
+    }
+    const creator = req.user.username;
+    const imageUrl = req.file.path;
+    
+      article.title = title;
+      article.description = description;
+      article.imageUrl = imageUrl;
+      article.creator = creator;
+      article.link = link;
+    
+     article.save(async (err) => {
+          if (err) return console.log(err);
+
+          console.log("Article Edited success");
+          message = "Article was edited successfully, To view go to articles";
+          res.render("edit-article", {
+            article:article,
+            message: message
+          });
+        });
+  } catch (error) {
+    next(error);
   }
 };
 
