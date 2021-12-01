@@ -39,7 +39,7 @@ exports.postLogin = async (req, res, next) => {
     req.session.isLoggedIn = doMatch;
     req.session.user = user;
     req.session.save();
-    res.json({ match: doMatch });
+    res.redirect("/activities-admin");
   } catch (error) {
     next(error);
   }
